@@ -5,7 +5,7 @@
 
 # My Portfolio Website
 
-![Screenshot](screenshot.png)
+![Screenshot](madhu.png)
 
 Welcome to my personal portfolio website! This website showcases my projects, skills, and experiences. It uses HTML, CSS, and JavaScript to create a responsive and visually appealing user interface.
 
