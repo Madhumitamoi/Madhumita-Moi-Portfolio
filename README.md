@@ -24,6 +24,7 @@ Welcome to my personal portfolio website! This website showcases my projects, sk
 - **JavaScript:** Interactivity and dynamic elements.
 - **Font Awesome:** Icons for visual elements.
 - **Google Fonts:** Typography customization.
+- **Vanta.js:** Animated objects.
 
 ## Getting Started
 
