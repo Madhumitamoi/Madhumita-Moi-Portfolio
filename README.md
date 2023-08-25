@@ -1,7 +1,7 @@
 # My Portfolio Website
 
 
-[Click here to check out my Website](https://tinyurl.com/madhumitamoi)
+[Click here to check out my Website](https://madhumitamoi.github.io/Madhumita-Moi-Portfolio/)
 
 # My Portfolio Website
 
