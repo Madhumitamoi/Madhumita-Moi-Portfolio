@@ -46,6 +46,7 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 						<li class="nav-item"><a href="work.html" class="nav-link">Work</a></li>
+						<li class="nav-item"><a href="travel.html" class="nav-link">Travel</a></li>
 						<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 					</ul>
 				</div>
@@ -55,113 +56,78 @@
 
 		<section id="home-section" class="hero">
 			<div id="halo" style="width:100vw; height:100vh; position:absolute;"></div>
-			<h1 class="vr text-center ">MADHUMITA</h1>
+			<h1 class="vr text-center">MADHUMITA</h1>
 			<div class="js-fullheight home-wrap d-flex">
 				<div class="half order-md-last"></div>
 				<div class="half">
-					<div class="home-slider owl-carousel">
-						<div class="slider-item js-fullheight">
-							<div class="overlay"></div>
-							<div class="container-fluid p-0">
-								<div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
-									data-scrollax-parent="true">
-									<div class="one-third img js-fullheight"
-										style="background-image:url(images/agra.jpg);">
-										<div class="overlay"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="slider-item js-fullheight">
-							<div class="overlay"></div>
-							<div class="container-fluid p-0">
-								<div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
-									data-scrollax-parent="true">
-									<div class="one-third img js-fullheight"
-										style="background-image:url(images/bridge.jpg);">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="slider-item js-fullheight">
-							<div class="overlay"></div>
-							<div class="container-fluid p-0">
-								<div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
-									data-scrollax-parent="true">
-									<div class="one-third img js-fullheight"
-										style="background-image:url(images/ice.jpg);">
-										<div class="overlay"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="slider-item js-fullheight">
-							<div class="overlay"></div>
-							<div class="container-fluid p-0">
-								<div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
-									data-scrollax-parent="true">
-									<div class="one-third img js-fullheight"
-										style="background-image:url(images/complex.jpg);">
-										<div class="overlay"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="slider-item js-fullheight">
-							<div class="overlay"></div>
-							<div class="container-fluid p-0">
-								<div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
-									data-scrollax-parent="true">
-									<div class="one-third img js-fullheight"
-										style="background-image:url(images/eye.jpg);">
-										<div class="overlay"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="home-slider owl-carousel" id="slider-container"></div>
 				</div>
 			</div>
 		</section>
+		
+		<script>
+			const images = ["agra.jpg", "bridge.jpg", "ice.jpg", "complex.jpg", "eye.jpg"];
+			const sliderContainer = document.getElementById("slider-container");
+		
+			images.forEach(image => {
+				const sliderItem = document.createElement("div");
+				sliderItem.classList.add("slider-item", "js-fullheight");
+				sliderItem.innerHTML = `
+					<div class="overlay"></div>
+					<div class="container-fluid p-0">
+						<div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" 
+							data-scrollax-parent="true">
+							<div class="one-third img js-fullheight" style="background-image:url(images/${image});">
+								<div class="overlay"></div>
+							</div>
+						</div>
+					</div>
+				`;
+				sliderContainer.appendChild(sliderItem);
+			});
+		</script>
+		
 
 
 		<section class="ftco-section ftco-intro">
 			<div class="container">
 				<div class="row justify-content-end">
 					<div class="col-md-4 d-flex">
-						<div class="img" style="background-image: url('images/mypic.jpg');"></div>
+						<div class="img" style="background-image: url('images/madhumita.jpeg');"></div>
 					</div>
 					<div class="col-md-8">
-						<h2 "> <span>Coder</span>, and Developer &amp; Student at
-							<span>NIT Agartala</span>
-						</h2>
-						<p class=" ">Hello, I'm Madhumita Moi, a Electronics and Communication Engineering student at
-							<span>National Institute of Technology, Agartala</span>
-							batch of 2024. I have a strong background in software development and a keen interest in solving 
-							complex problems using algorithms and data structures. 
-							Welcome to my portfolio website, where you can explore my projects, achievements, 
-							and technical skills.
-
+						<h2> <span>Software Engineer</span> & Traveller </h2>
+						<p>Hello! I'm <strong>Madhumita</strong>, a Software Engineer passionate about building scalable systems, 
+						   seamless user experiences, and high-performance applications.  
+						   I graduated from <strong>NIT Agartala (2024)</strong> and have worked at <strong>Zomato</strong> and 
+						   <strong>Virgio</strong>, solving complex problems with efficient solutions.</p>
+						
+						<p>Beyond tech, I’m an <strong>avid traveler</strong> who loves exploring cultures, cuisines, and landscapes— 
+						   from the Himalayas to European streets. This site is where I share my <strong>tech journey</strong> 
+						   and <strong>travel adventures</strong>.</p>
+						
+						<ul>
+							<li>Software Engineer at Celigo (Apr 2025 - Present)</li>
+							<li>Software Engineer at Zomato (Jun 2024 - Feb 2025)</li>
 							<li>First Runner-Up @Google Girl Hackathon'23</li>
-							</p>
-							<a href="https://www.linkedin.com/in/madhumita-moi/" target=" _blank">
-							<img class="m-1" src="images/linkedin.png" width="50" />
-							</a>
-							<a href="https://github.com/Madhumitamoi" target="_blank">
-								<img class="m-1" src="images/github.png" width="50" />
-							</a><a href="https://twitter.com/Madhumita_Moi" target="_blank">
-								<img class="m-1" src="images/twitter.png" width="50" />
-							</a>
-							<p><a href="/resume.html" class="btn btn-primary my-4">Resume</a></p>
-
+						</ul>
+		
+						<a href="https://www.linkedin.com/in/madhumita-moi/" target="_blank">
+							<img class="m-1" src="images/linkedin.png" width="40" />
+						</a>
+						<a href="https://github.com/Madhumitamoi" target="_blank">
+							<img class="m-1" src="images/github.png" width="40" />
+						</a>
+						<a href="https://twitter.com/Madhumita_Moi" target="_blank">
+							<img class="m-1" src="images/twitter.png" width="40" />
+						</a>
+		
+						<p><a href="/resume.html" class="btn btn-primary my-4">Resume</a></p>
 					</div>
 				</div>
 			</div>
-			<!-- <canvas id='gridwormCanvas' style='background-color: white; height: 100vh; width:100vw'></canvas> -->
-
 		</section>
+		
 
 
 		<section class="services-section py-5 py-md-0">
@@ -211,6 +177,82 @@
 					</div>
 				</div>
 			</div>
+			<div class="container-fluid px-0 portfolio-entry ">
+				<div class="row no-gutters d-xl-flex justify-content-end text-wrapper ">
+					<div class="one-half img js-fullheight " style="background-image: url('images/zomato\ small.jpg');">
+					</div>
+					<div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
+						<div class="text align-items-center d-flex">
+							<div class="desc pt-5 pl-4 pr-4 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
+								<div class="top">
+									<span class="subheading">Software Engineer - 1 {June 2024 - Feb 2025}</span>
+									<h2 class="mb-4"><a href="work.html">ZOMATO</a></h2>
+								</div>
+								<div class="absolute">
+									<p>
+										<li>
+											Worked on table reservation Flow for Zomato/District: developed the end-to-end booking system for District (7.5M+ downloads) in Golang, handling 162.5K+ peak reservations and improving booking efficiency.
+										</li>
+										<li>
+											Developed Table Reservation Notification System: Built a real-time notification system in Golang for Zomato and District, processing 70K+ daily updates, ensuring reliable user-restaurant partner communication.
+										</li>
+										<li>
+											Implemented Set Menu Concept: Enabled targeted dining discounts with 10K+ daily impressions, used by 200+ restaurants, driving restaurant engagement & profitability, being the key feature for Zomato/District Dining Carnival
+										</li>
+										<li>
+											Optimized Backend Performance & Scalability: Built scalable APIs in Golang, migrating internal functionalities to external RPCs & gRPC servers, improving backend performance, reliability, and scalability. Applied fault tolerance & resiliency patterns and leveraged AWS databases, ensuring low-latency, scalable, and highly available reservation services.
+										</li>
+										<li>
+											Developed Internal Dashboards & Self-Serve Tools: Built Feature Store, Benefits, Table Reservation & Experiences Dashboards, streamlining workflows for 200+ analysts and reducing developer effort.
+										</li>
+										<li>
+											Integrated Tracking for Impressions: Implemented tracking systems to log and monitor user interactions, improving analytics & data-driven decisions.
+										</li>
+									</p>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-fluid px-0 portfolio-entry ">
+				<div class="row no-gutters d-xl-flex justify-content-end text-wrapper ">
+					<div class="one-half img js-fullheight " style="background-image: url('images/virgio.jpeg');">
+					</div>
+					<div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
+						<div class="text align-items-center d-flex">
+							<div class="desc pt-5 pl-4 pr-4 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
+								<div class="top">
+									<span class="subheading">Software Engineering Internship {Dec 2023 - May 2024}</span>
+									<h2 class="mb-4"><a href="work.html">VIRGIO</a></h2>
+								</div>
+								<div class="absolute">
+									<p>XIMKART is raw-material sourcing platform. It streamlines cross-border raw material imports for manufacturers and businesses, simplifying vendor management,
+									quality control, customs, and pricing concerns.
+										<li>
+											Developed a PDF-to-image conversion feature in Java, enhancing file preview functionality.
+										</li>
+										<li>
+											Implemented WhatsApp integration for enhanced client notifications, improving communication and client experience.
+										</li>
+										<li>
+											Designed a search engine using Elasticsearch for product search, aiming to enhance user experience and satisfaction.
+										</li>
+										<li>
+											Tech Stacks: JAVA, Elasticsearch
+										</li>
+									</p>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 			<div class="container-fluid px-0 portfolio-entry ">
 				<div class="row no-gutters d-xl-flex justify-content-end text-wrapper ">
 					<div class="one-half img js-fullheight " style="background-image: url('images/work-3.jpg');">
@@ -431,11 +473,10 @@
 					<div class="col-md-8">
 						<h2> Technical <span>Skills</span>
 						</h2>
-						<p><strong>Proficient:</strong> C++,​ ReactJS, NextJS, NodeJS, CSS, HTML5,
+						<p><strong>Tech Stacks & Proficiency:</strong> Golang, Java, C++,​ ReactJS, NodeJS, CSS, HTML5,
 							Material UI<br /><br />
 
-
-							<strong>Familiar:</strong> Postman, Elasticsearch, Visual Studio,​ Git, Github
+							<strong>Familiar:</strong> AWS Dynamodb, Postman, Elasticsearch, Visual Studio,​ Git, Github
 							<br /><br />
 
 							<strong>Computer Fundamentals:</strong>System Design, Object Oriented Programming, Operating system,
@@ -500,7 +541,7 @@
 											Bengal, India</span></li>
 									<li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9064806467</span></a></li>
 									<li><a href="#"><span class="icon icon-envelope"></span><span
-												class="text">madhumoi0266@gmail.com</span></a></li>
+												class="text">madhumitamoi.nita@gmail.com</span></a></li>
 								</ul>
 							</div>
 						</div>
