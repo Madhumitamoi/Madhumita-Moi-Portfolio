@@ -5,7 +5,7 @@
   const year = new Date().getFullYear();
 
   footerContainer.innerHTML = `
-    <footer class="ftco-footer ftco-section">
+    <footer class="ftco-footer footer-compact">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
