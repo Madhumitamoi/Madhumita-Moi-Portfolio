@@ -148,11 +148,19 @@ AOS.init({
 
   // scroll
   var scrollWindow = function () {
-    $(window).scroll(function () {
-      var $w = $(this),
-        st = $w.scrollTop(),
-        navbar = $(".ftco_navbar"),
-        sd = $(".js-scroll-wrap");
+    var updateNavbarState = function (st) {
+      var navbar = $(".ftco_navbar"),
+        sd = $(".js-scroll-wrap"),
+        hasHomeSection = $("#home-section").length > 0;
+
+      // When the hero section is removed/commented out, keep navbar readable at top.
+      if (!hasHomeSection) {
+        navbar.addClass("scrolled awake").removeClass("sleep");
+        if (sd.length > 0) {
+          sd.removeClass("sleep");
+        }
+        return;
+      }
 
       if (st > 150) {
         if (!navbar.hasClass("scrolled")) {
@@ -182,7 +190,15 @@ AOS.init({
           sd.removeClass("sleep");
         }
       }
+    };
+
+    $(window).scroll(function () {
+      var $w = $(this),
+        st = $w.scrollTop();
+      updateNavbarState(st);
     });
+
+    updateNavbarState($(window).scrollTop());
   };
   scrollWindow();
 
