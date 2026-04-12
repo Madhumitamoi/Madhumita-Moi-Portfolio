@@ -1,116 +1,409 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Madhumita</title>
+    <title>Travel | Madhumita Moi</title>
     <link rel="icon" type="image/png" href="images/M.png" />
-
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,500,600,700" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
-
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
-
     <link rel="stylesheet" href="css/aos.css" />
-
     <link rel="stylesheet" href="css/ionicons.min.css" />
-
     <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="css/jquery.timepicker.css" />
-
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/icomoon.css" />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <nav
-    class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
-    id="ftco-navbar"
-  >
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Madhumita</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#ftco-nav"
-        aria-controls="ftco-nav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="oi oi-menu"></span> Menu
-      </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-          </li>
-          <!-- <li class="nav-item active">
-            <a href="work.html" class="nav-link">Work</a>
-          </li> -->
-          <li class="nav-item">
-            <a href="travel.html" class="nav-link">Travel</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coming Soon - My Travel Page</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
+      :root {
+        --travel-bg: #eef2f6;
+        --travel-soft: #f4efe9;
+        --travel-card: #ffffff;
+        --travel-text: #202022;
+        --travel-muted: #67676c;
+        --travel-accent: #cf8b57;
+        --travel-line: #d7dde5;
+      }
+
+      body.travel-clean {
+        background: #f7f7f8;
+        color: var(--travel-text);
+        font-family: "Poppins", Arial, sans-serif;
+      }
+
+      .travel-hero-clean {
+        background: linear-gradient(140deg, #f8efe4 0%, #f7f8fc 100%);
+        padding: 10rem 0 6rem;
+      }
+
+      .travel-hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 1.2rem;
         align-items: center;
-        height: 100vh;
-        margin: 0;
-        background: linear-gradient(135deg, #000, #000);
-        color: white;
-        text-align: center;
       }
-      .coming-soon {
-        max-width: 600px;
-        padding: 20px;
-      }
-      h1 {
+
+      .travel-hero-clean h1 {
+        color: #272224;
+        font-family: "Lora", serif;
         font-size: 3rem;
-        margin-bottom: 10px;
-        color: white;
+        line-height: 1.15;
+        margin-bottom: 0.9rem;
       }
-      p {
-        font-size: 1.2rem;
+
+      .travel-hero-clean p {
+        color: #6f6760;
+        margin-bottom: 0.7rem;
+      }
+
+      .hero-personality {
+        margin-top: 1rem;
+      }
+
+      .hero-personality .line {
+        color: #5f5751;
+        font-size: 0.94rem;
+        letter-spacing: 0.02em;
+        margin-right: 1rem;
+        display: inline-block;
+        margin-bottom: 0.45rem;
+      }
+
+      .hero-personality .line strong {
+        color: #ad6f3f;
+        font-weight: 600;
+      }
+
+      .hero-collage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+      }
+
+      .hero-collage .pic {
+        border-radius: 11px;
+        overflow: hidden;
+        border: 1px solid #d6d9de;
+        background: #fff;
+      }
+
+      .hero-collage .pic img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        filter: saturate(0.95);
+      }
+
+      .hero-collage .pic.tall img {
+        height: 220px;
+      }
+
+      .travel-shell {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        font-family: "Lora", serif;
+        margin-bottom: 0.8rem;
+      }
+
+      .section-sub {
+        color: var(--travel-muted);
+        margin-bottom: 2rem;
+      }
+
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .story-card {
+        background: var(--travel-card);
+        border: 1px solid #ececef;
+        border-radius: 14px;
+        padding: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .story-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .story-card h4 {
+        font-family: "Lora", serif;
+        margin-bottom: 0.35rem;
+        font-size: 1.15rem;
+      }
+
+      .story-thumb {
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 0.75rem;
+        border: 1px solid #ece3da;
+      }
+
+      .story-thumb img {
+        width: 100%;
+        height: 155px;
+        object-fit: cover;
+      }
+
+      .story-card .tag {
+        display: inline-block;
+        margin-bottom: 0.7rem;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #8a6a50;
+      }
+
+      .story-card p {
+        color: var(--travel-muted);
+        margin-bottom: 0;
+        line-height: 1.7;
+        font-size: 0.94rem;
+      }
+
+      .story-link {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.8rem;
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: #7a5a3f;
+      }
+
+      .story-link:hover {
+        color: #5f4128;
+        text-decoration: none;
+      }
+
+      @media (max-width: 991.98px) {
+        .travel-hero-clean {
+          padding: 8.5rem 0 4.5rem;
+        }
+
+        .travel-hero-grid {
+          grid-template-columns: 1fr;
+          gap: 1.1rem;
+        }
+
+        .travel-hero-clean h1 {
+          font-size: 2.3rem;
+        }
+
+        .stories-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .stop {
+          min-width: 112px;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .stories-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
-  <body>
-    <div class="coming-soon">
-      <h1>Coming Soon</h1>
-      <p>My travel stories & photography will be here soon. Stay tuned!</p>
+
+  <body class="travel-clean">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Madhumita</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item active"><a href="travel.html" class="nav-link">Travel</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="travel-hero-clean">
+      <div class="container">
+        <div class="travel-hero-grid">
+          <div>
+            <h1>Travel stories from places that changed me.</h1>
+            <p>I travel for perspective, people, and the small moments in between plans.</p>
+            <p>Some trips are chaotic, some are calm, all of them leave something behind.</p>
+            <div class="hero-personality">
+              <span class="line">planner: <strong>sometimes</strong></span>
+              <span class="line">last-minute: <strong>often</strong></span>
+              <span class="line">mountains: <strong>always</strong></span>
+              <span class="line">coffee stops: <strong>mandatory</strong></span>
+              <span class="line">solo moments: <strong>needed</strong></span>
+            </div>
+          </div>
+          <div class="hero-collage">
+            <div class="pic tall"><img src="images/madhumita.jpeg" alt="Travel collage 1" /></div>
+            <div class="pic"><img src="images/taj2.jpg" alt="Travel collage 2" /></div>
+            <div class="pic"><img src="images/bridge.jpg" alt="Travel collage 3" /></div>
+            <div class="pic tall"><img src="images/ice.jpg" alt="Travel collage 4" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="travel-shell pt-0">
+      <div class="container">
+        <h2 class="section-title">Travel Story Cards</h2>
+        <p class="section-sub">The places, the mood, and the memory.</p>
+
+        <div class="stories-grid">
+
+          <!-- <article class="story-card">
+            <div class="story-thumb"><img src="images/bridge.jpg" alt="London travel photo" /></div>
+            <h4>London</h4>
+            <span class="tag">United Kingdom</span>
+            <p>Rainy evenings, quick coffee breaks, and neighborhoods that each feel like their own world.</p>
+            <a class="story-link" href="travel_blogs/london.html">Read story + photo dump</a>
+          </article>  -->
+<!-- 
+          <article class="story-card">
+            <div class="story-thumb"><img src="images/complex.jpg" alt="Oxford travel photo" /></div>
+            <h4>Oxford</h4>
+            <span class="tag">United Kingdom</span>
+            <p>A slower rhythm, beautiful architecture, and long walks that made me want to stay longer.</p>
+            <a class="story-link" href="travel_blogs/oxford.html">Read story + photo dump</a>
+          </article>
+
+          <article class="story-card">
+            <div class="story-thumb"><img src="images/agra.jpg" alt="Italy travel photo" /></div>
+            <h4>Italy (Rome, Florence, Pisa)</h4>
+            <span class="tag">Europe</span>
+            <p>History, art, and food all at once. Every corner felt cinematic and alive.</p>
+            <a class="story-link" href="travel_blogs/italy.html">Read story + photo dump</a>
+          </article> -->
+
+          <!-- <article class="story-card">
+            <div class="story-thumb"><img src="images/taj2.jpg" alt="Amalfi Coast travel photo" /></div>
+            <h4>Amalfi Coast</h4>
+            <span class="tag">Italy</span>
+            <p>Cliffside roads, blue sea, and those golden-hour views that stay in your head for months.</p>
+            <a class="story-link" href="travel_blogs/amalfi-coast.html">Read story + photo dump</a>
+          </article>
+
+          <article class="story-card">
+            <div class="story-thumb"><img src="images/ice.jpg" alt="Switzerland travel photo" /></div>
+            <h4>Switzerland</h4>
+            <span class="tag">Europe</span>
+            <p>Snow peaks, still lakes, and a calm that feels almost unreal.</p>
+            <a class="story-link" href="travel_blogs/switzerland.html">Read story + photo dump</a>
+          </article>
+
+          <article class="story-card">
+            <div class="story-thumb"><img src="images/taj.jpg" alt="Thailand travel photo" /></div>
+            <h4>Thailand</h4>
+            <span class="tag">Southeast Asia</span>
+            <p>Vibrant streets, beach energy, and some of the best spontaneous plans I ever made.</p>
+            <a class="story-link" href="travel_blogs/thailand.html">Read story + photo dump</a>
+          </article> -->
+
+          <!-- <article class="story-card"> -->
+            <!-- <div class="story-thumb"><img src="images/ice.jpg" alt="Manali and Kasol travel photo" /></div>
+            <h4>Manali & Kasol</h4>
+            <span class="tag">Himachal Pradesh</span>
+            <p>Cold weather, warm food, and nights where time moved differently.</p>
+            <a class="story-link" href="travel_blogs/manali-kasol.html">Read story + photo dump</a>
+          </article>-->
+
+          <!-- <article class="story-card">
+            <div class="story-thumb"><img src="images/bridge.jpg" alt="Bir Billing travel photo" /></div>
+            <h4>Bir Billing</h4>
+            <span class="tag">Himachal Pradesh</span>
+            <p>Open skies and a quiet thrill, especially when watching the hills at sunset.</p>
+            <a class="story-link" href="travel_blogs/bir-billing.html">Read story + photo dump</a>
+          </article>
+
+          <article class="story-card">
+            <div class="story-thumb"><img src="images/complex.jpg" alt="Dharamshala travel photo" /></div>
+            <h4>Dharamshala, Dharamkot, McLeodganj</h4>
+            <span class="tag">Himachal Pradesh</span>
+            <p>Peaceful cafes, mountain air, and a feeling that invites reflection.</p>
+            <a class="story-link" href="travel_blogs/dharamshala-dharamkot-mcleodganj.html">Read story + photo dump</a>
+          </article>  -->
+
+          <article class="story-card">
+            <div class="story-thumb"><img src="travel_photography/varkala/cliff.png" alt="Varkala travel photo" /></div>
+            <h4>Varkala (Solo Trip)</h4>
+            <span class="tag">Kerala</span>
+            <p>Solo travel at its best: sea views, personal reset, and meaningful quiet time.</p>
+            <a class="story-link" href="travel_blogs/varkala-solo-trip.html">Read story + photo dump</a>
+          </article>
+
+          <!-- <article class="story-card">
+            <div class="story-thumb"><img src="images/taj.jpg" alt="Goa travel photo" /></div>
+            <h4>Goa</h4>
+            <span class="tag">India</span>
+            <p>Beach mornings, music nights, and carefree moments with friends.</p>
+            <a class="story-link" href="travel_blogs/goa.html">Read story + photo dump</a>
+          </article>
+
+          <article class="story-card">
+            <div class="story-thumb"><img src="images/ice.jpg" alt="Kashmir travel photo" /></div>
+            <h4>Kashmir</h4>
+            <span class="tag">India</span>
+            <p>Raw beauty, crisp air, and landscapes that made everything else feel smaller.</p>
+            <a class="story-link" href="travel_blogs/kashmir.html">Read story + photo dump</a>
+          </article> -->
+        </div>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+      </svg>
     </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/footer.js"></script>
+
+    <script>
+    </script>
   </body>
 </html>
