@@ -32,17 +32,15 @@
 		<link rel="stylesheet" href="css/style.css">
 		<style>
 			:root {
-				--home-accent: #f96d00;
-				--home-ink: #1f1f1f;
-				--home-soft: #fff7ef;
-				--home-muted: #6e6a65;
+				--home-accent: #7C5CFF;
+				--home-ink: #E6E6E6;
+				--home-soft: #0F1115;
+				--home-muted: #9CA3AF;
 			}
 
 			.personality-hero {
 				padding: 10rem 0 6rem;
-				background:
-					radial-gradient(circle at 85% 10%, rgba(249, 109, 0, 0.16), transparent 40%),
-					linear-gradient(135deg, #fff3e4 0%, #fffaf5 45%, #f9fbff 100%);
+				background: linear-gradient(135deg, #0F1115 0%, #151821 100%);
 			}
 
 			.eyebrow {
@@ -71,33 +69,33 @@
 			.hero-tags span {
 				display: inline-block;
 				margin: 0.35rem 0.5rem 0 0;
-				background: #fff;
-				border: 1px solid #eedfcf;
+				background: #1B1F2A;
+				border: 1px solid #232735;
 				padding: 0.45rem 0.75rem;
 				border-radius: 999px;
 				font-size: 12px;
 				font-weight: 600;
-				color: #5c4126;
+				color: #E6E6E6;
 			}
 
 			.hero-portrait {
 				border-radius: 20px;
 				width: 100%;
-				box-shadow: 0 20px 45px rgba(31, 20, 12, 0.16);
+				box-shadow: 0 20px 45px rgba(124, 92, 255, 0.2);
 			}
 
 			.soft-section {
-				background: var(--home-soft);
+				background: #151821;
 				padding: 5rem 0;
 			}
 
 			.story-card {
-				background: #fff;
-				border: 1px solid #efdfd0;
+				background: #1B1F2A;
+				border: 1px solid #232735;
 				border-radius: 16px;
 				padding: 1.4rem;
 				height: 100%;
-				box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+				box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);
 			}
 
 			.story-card h4 {
@@ -113,14 +111,16 @@
 
 			.now-next {
 				padding: 5rem 0;
+				background: #111111;
 			}
 
 			.now-next-card {
 				border-radius: 16px;
 				padding: 1.6rem;
-				background: #ffffff;
-				border: 1px solid #ececec;
+				background: #1B1F2A;
+				border: 1px solid #232735;
 				height: 100%;
+				box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);
 			}
 
 			.now-next-card ul {
@@ -131,28 +131,33 @@
 			}
 
 			.work-heading {
-				font-size: 42px;
-				font-weight: 700;
-				letter-spacing: 2px;
+				font-size: 48px;
+				font-weight: 300;
+				letter-spacing: 3px;
+				color: white;
+				font-family: 'Georgia', serif;
+				text-transform: capitalize;
+				line-height: 1.2;
 			}
 
 			.skills-band {
 				max-width: 900px;
-				margin: 0 auto 2.2rem;
-				background: #fff8f1;
-				border: 1px solid #f2dcc8;
+				margin: 0 auto 0.6rem;
+				background: #1B1F2A;
+				border: 1px solid #232735;
 				border-radius: 16px;
-				padding: 1.5rem;
-				box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+				padding: 0.6rem;
+				box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);
 			}
 
 			.skills-band h3 {
-				font-size: 1.25rem;
-				margin-bottom: 1rem;
+				font-size: 0.9rem;
+				margin-bottom: 0.3rem;
+				color: white;
 			}
 
 			.skills-group {
-				margin-bottom: 1rem;
+				margin-bottom: 0.25rem;
 			}
 
 			.skills-group:last-child {
@@ -160,24 +165,46 @@
 			}
 
 			.skills-label {
+				font-size: 10px;
+				font-weight: 600;
+				color: #7C5CFF;
+				text-transform: uppercase;
+				letter-spacing: 0.7px;
+				margin-bottom: 0.2rem;
+				margin-top: 0;
+			}
+
+			.skill-chip {
+				display: inline-block;
+				margin: 0 0.2rem 0.2rem 0;
+				background: #151821;
+				border: 1px solid #232735;
+				border-radius: 999px;
+				padding: 0.2rem 0.5rem;
+				font-size: 10px;
+				font-weight: 600;
+				color: #9CA3AF;
+			}
+
+			.skills-label {
 				font-weight: 700;
 				font-size: 13px;
 				text-transform: uppercase;
 				letter-spacing: 0.08em;
-				color: #6d4a2a;
+				color: #7C5CFF;
 				margin-bottom: 0.6rem;
 			}
 
 			.skill-chip {
 				display: inline-block;
 				margin: 0 0.45rem 0.45rem 0;
-				background: #ffffff;
-				border: 1px solid #ead7c5;
+				background: #151821;
+				border: 1px solid #232735;
 				border-radius: 999px;
 				padding: 0.4rem 0.8rem;
 				font-size: 13px;
 				font-weight: 600;
-				color: #5e4a34;
+				color: #9CA3AF;
 			}
 
 			@media (max-width: 991.98px) {
@@ -188,6 +215,27 @@
 				.hero-title {
 					font-size: 2.3rem;
 				}
+			}
+
+			/* Dark mode headlines - bright and clear */
+			h1, h2, h3, h4, h5, h6 {
+				color: #FFFFFF !important;
+			}
+
+			/* Resume button styling */
+			.btn-outline-dark {
+				color: #E6E6E6 !important;
+				border-color: #E6E6E6 !important;
+			}
+
+			.btn-outline-dark:hover {
+				background-color: #7C5CFF !important;
+				border-color: #7C5CFF !important;
+				color: white !important;
+			}
+
+			.btn-outline-dark .icon-file-pdf-o {
+				color: #E6E6E6 !important;
 			}
 		</style>
 	</head>
@@ -204,7 +252,7 @@
 
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="work.html" class="nav-link">Work</a></li>
 						<!-- <li class="nav-item"><a href="work.html" class="nav-link">Work</a></li> -->
 						<li class="nav-item"><a href="travel.html" class="nav-link">Travel</a></li>
 						<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -218,16 +266,17 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-7">
-						<p class="eyebrow">Engineer, Explorer, Dancer, Lifter</p>
-						<h1 class="hero-title">Hi, I'm Madhumita. I build systems at day, chase adventures and personal growth at night.</h1>
+						<p class="eyebrow">Engineer, Explorer, Dancer, Lifter, Music lover</p>
+						<h1 class="hero-title">Hi, I'm Madhumita.<br />somewhere between code, music, and last-minute trips.</h1>
 						<p class="hero-sub">
-							Backend engineer at Dream11 building systems for scale. But equally passionate about travel storytelling, strength training, contemporary dance, and the pursuit of health and discipline in everything I do. Life's too short to be one-dimensional.
+							Software engineer at Dream11 building systems for scale. But equally passionate about travel storytelling, fitness, dance, and the pursuit of health and discipline in everything I do. Life's too short to be one-dimensional.
 						</p>
 						<div class="hero-tags mb-4">
-							<span>Backend Systems</span>
+							<span>Backend Engineer</span>
 							<span>Travel Storytelling</span>
-							<span>Lifting & Fitness</span>
-							<span>Contemporary Dance</span>
+							<span>Fitness</span>
+							<span>Music Lover</span>
+							<span>Dance</span>
 						</div>
 						<a href="/contact.html" class="btn btn-primary mr-2">Let's Connect</a>
 						<a href="/images/Madhumita_Moi_Resume_2026.pdf" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">
@@ -241,13 +290,45 @@
 			</div>
 		</section>
 
+		<!-- Currently Listening -->
+		<section style="background: #0F1115; padding: 2rem 0; border-top: 1px solid #232735; border-bottom: 1px solid #232735;">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-1 text-center">
+					<div style="width: 40px; height: 40px; background: #7C5CFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse 2s ease-in-out infinite; box-shadow: 0 0 20px rgba(124, 92, 255, 0.3);">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));">
+							<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-12.041-1.409-.479.12-1.02-.209-1.14-.66-.12-.48.209-1.02.66-1.141C9.6 9.9 15.079 10.561 18.739 12.841c.361.22.599.659.301 1.1zm.140-3.45c-3.9-2.3-10.561-2.581-14.621-1.425-.479.119-1.02-.209-1.14-.678-.12-.48.209-1.02.678-1.141C9.121 1.861 16.563 2.139 21.017 4.981c.361.219.599.659.301 1.099-.3.481-.899.599-1.301.301z"/>
+						</svg>
+					</div>
+					</div>
+					<div class="col-md-7">
+						<p style="font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Now Playing</p>
+						<h4 style="font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 0.25rem; color: #E6E6E6;">Comfort Playlist</h4>
+						<p style="color: #9CA3AF; font-size: 13px; margin: 0;">Always in between melodic techno, electronic, ambient.</p>
+					</div>
+					<div class="col-md-4 text-md-right mt-3 mt-md-0">
+						<a href="https://open.spotify.com/playlist/571tuHFKczNXRFvNujSpyb?si=14079fea5f4d461d" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #7C5CFF; color: white; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s ease; border: none; box-shadow: 0 0 20px rgba(124, 92, 255, 0.2);">
+							<span>▶</span> Play
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<style>
+				@keyframes pulse {
+					0%, 100% { opacity: 1; }
+					50% { opacity: 0.5; }
+				}
+			</style>
+		</section>
+
 		<section class="soft-section">
 			<div class="container">
 				<div class="row mb-4">
 					<div class="col-md-10">
 						<h2>What moves me</h2>
-						<p class="mb-0" style="color: #6e6a65;">
-							I live at the intersection of complexity and creativity—building reliable systems, chasing new horizons, and pushing my body's limits.
+						<p class="mb-0" style="color: #6B7280;">
+							I live at the intersection of complexity and creativity—building reliable systems, chasing new horizons, and pushing my limits.
 						</p>
 					</div>
 				</div>
@@ -267,7 +348,7 @@
 					<div class="col-md-4 mb-3">
 						<div class="story-card">
 							<h4>💪 As a Person</h4>
-							<p>I'm disciplined about strength, health, and growth. Whether it's lifting, dance, or nutrition—I believe in consistency and pushing limits every day.</p>
+							<p>I'm learning to be disciplined about strength, health, and growth. Whether it's lifting, dance, or nutrition—I believe in consistency and pushing limits every day.</p>
 						</div>
 					</div>
 				</div>
@@ -316,7 +397,7 @@
 
 
 	  
-		<section class="ftco-section ftco-portfolio">
+		<section class="ftco-section ftco-portfolio" style="background: #0F1115;">
 
 <!-- SECTION TITLE -->
 
@@ -324,8 +405,8 @@
   <div class="row justify-content-center pb-3">
     <div class="col-md-12 mb-5 text-center">
 
-      <h2 class="work-heading">
-        Professional <span style="color:#e23744;">Journey</span>
+<h2 class="work-heading" style="color: #E6E6E6;">
+		        Professional <span style="color:#7C5CFF;">Journey</span>
       </h2>
 
     </div>
@@ -333,7 +414,7 @@
 </div>
 
 <div class="skills-band">
-	<h3>Skills That Power My Work</h3>
+	<!-- <h3>Skills That Power My Work</h3> -->
 	<div class="skills-group">
 		<p class="skills-label">Core Stack</p>
 		<span class="skill-chip">Golang</span>
@@ -364,27 +445,27 @@
 
 <!-- Dream11 -->
 
-<div style="max-width:900px;margin:auto;background:white;padding:30px;border-radius:12px;
-box-shadow:0px 10px 30px rgba(0,0,0,0.08);margin-bottom:40px;position:relative;"
-onmouseover="this.style.transform='translateY(-5px)'; this.style.transition='0.3s';"
-onmouseout="this.style.transform='translateY(0px)'">
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:30px;border-radius:12px;border:1px solid #232735;
+box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);margin-bottom:40px;position:relative;"
+onmouseover="this.style.transform='translateY(-5px)'; this.style.transition='0.3s'; this.style.background='#232735';"
+onmouseout="this.style.transform='translateY(0px)'; this.style.background='#1B1F2A';">
 
 <img src="images/dream11.png"
 style="position:absolute;top:25px;right:25px;height:42px;object-fit:contain;opacity:0.9;">
 
-<h3 style="font-size:28px;margin-bottom:5px;">Dream11</h3>
+<h3 style="font-size:28px;margin-bottom:5px;color:#E6E6E6;">Dream11</h3>
 
-<div style="color:#666;margin-bottom:15px;">
+<div style="color:#9CA3AF;margin-bottom:15px;">
 Software Engineer | May 2025 – Present
 </div>
 
 <div style="margin-bottom:15px;">
-<span style="background:#f3f3f3;padding:6px 12px;border-radius:6px;margin-right:8px;">Payments & KYC Systems</span>
-<span style="background:#f3f3f3;padding:6px 12px;border-radius:6px;margin-right:8px;">Audience Engine Platform</span>
-<span style="background:#f3f3f3;padding:6px 12px;border-radius:6px;">Government Service Integrations</span>
+<span style="background:#2D2340;padding:6px 12px;border-radius:6px;margin-right:8px;color:#7C5CFF; border:1px solid rgba(124, 92, 255, 0.3);">Payments & KYC Systems</span>
+<span style="background:#2D2340;padding:6px 12px;border-radius:6px;margin-right:8px;color:#7C5CFF; border:1px solid rgba(124, 92, 255, 0.3);">Audience Engine Platform</span>
+<!-- <span style="background:#2D2340;padding:6px 12px;border-radius:6px;color:#7C5CFF; border:1px solid rgba(124, 92, 255, 0.3);">Government Service Integrations</span> -->
 </div>
 
-<ul style="line-height:1.8;">
+<ul style="line-height:1.8;color:#9CA3AF;">
   <li>Currently building backend systems for a new RMG platform in partnership with third-party government services, including the Winners management service.</li>
   <li>Developed and maintained Payments and KYC services for Cricbuzz11, ensuring secure and reliable financial transactions.</li>
   <li>Contributed to the Experimentation and Audience Engine platform, enabling improved user targeting and data-driven product decisions.</li>
@@ -394,12 +475,12 @@ Software Engineer | May 2025 – Present
 </div>
 
 
-<div style="max-width:900px;margin:auto;background:white;padding:20px;border-left:4px solid #f96d00;border-radius:4px;margin-bottom:15px;">
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:15px;border:1px solid #232735;">
 <div style="display:flex;justify-content:space-between;align-items:start;">
 <div>
-<h4 style="margin:0 0 5px 0;">Zomato</h4>
-<p style="margin:0;color:#666;font-size:14px;">Software Engineer I | June 2024 – Feb 2025</p>
-<p style="margin:8px 0 0 0;color:#5c4126;font-size:14px;">Table reservation system, real-time notifications, scalable APIs</p>
+<h4 style="margin:0 0 5px 0;color:#E6E6E6;">Zomato</h4>
+<p style="margin:0;color:#9CA3AF;font-size:14px;">Software Engineer I | June 2024 – Feb 2025</p>
+<p style="margin:8px 0 0 0;color:#9CA3AF;font-size:14px;">Worked with District/Zomato dining team. Table reservation system, real-time notifications, scalable APIs</p>
 </div>
 <img src="images/Zomato-logo.png" style="height:30px;object-fit:contain;opacity:0.8;">
 </div>
@@ -408,46 +489,28 @@ Software Engineer | May 2025 – Present
 
 <!-- VIRGIO -->
 
-<div style="max-width:900px;margin:auto;background:white;padding:30px;border-radius:12px;
-box-shadow:0px 10px 30px rgba(0,0,0,0.08);margin-bottom:40px;position:relative;"
-onmouseover="this.style.transform='translateY(-5px)'; this.style.transition='0.3s';"
-onmouseout="this.style.transform='translateY(0px)'">
-
-<img src="images/virgio.jpeg"
-style="position:absolute;top:25px;right:25px;height:42px;object-fit:contain;opacity:0.9;">
-
-<h3 style="font-size:28px;margin-bottom:5px;">Virgio</h3>
-
-<div style="color:#666;margin-bottom:15px;">
-Software Engineering Intern | Dec 2023 – May 2024
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:15px;border:1px solid #232735;">
+<div style="display:flex;justify-content:space-between;align-items:start;">
+<div>
+<h4 style="margin:0 0 5px 0;color:#E6E6E6;">Virgio</h4>
+<p style="margin:0;color:#9CA3AF;font-size:14px;">Software Engineering Intern | Dec 2023 – May 2024</p>
+<p style="margin:8px 0 0 0;color:#9CA3AF;font-size:14px;">Worked crazy onsite for first time with a early stage startup. Frontend, Shopify Hydrogen, e-commerce optimization</p>
 </div>
-
-<div style="margin-bottom:15px;">
-<span style="background:#f3f3f3;padding:6px 12px;border-radius:6px;margin-right:8px;">React</span>
-<span style="background:#f3f3f3;padding:6px 12px;border-radius:6px;margin-right:8px;">Remix</span>
-<span style="background:#f3f3f3;padding:6px 12px;border-radius:6px;">Shopify Hydrogen</span>
+<img src="images/virgio.jpeg" style="height:30px;object-fit:contain;opacity:0.8;">
 </div>
-
-<ul style="line-height:1.8;">
-<li>Developed the Circularity page showcasing VIRGIO’s sustainable fashion initiative.</li>
-<li>Improved size chart interaction reducing customer queries.</li>
-<li>Migrated frontend to Shopify Hydrogen improving performance and SEO.</li>
-<li>Developed custom returns and exchange flow for improved customer experience.</li>
-<li>Resolved UI bugs and optimized frontend components.</li>
-</ul>
-
 </div>
 
 
 <!-- XIMKART -->
 
-<div style="max-width:900px;margin:auto;background:white;padding:20px;border-left:4px solid #f96d00;border-radius:4px;margin-bottom:40px;">
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:40px;border:1px solid #232735;">
 <div style="display:flex;justify-content:space-between;align-items:start;">
 <div>
-<h4 style="margin:0 0 5px 0;">Ximkart</h4>
-<p style="margin:0;color:#666;font-size:14px;">Software Engineering Intern | May 2023 – July 2023</p>
-<p style="margin:8px 0 0 0;color:#5c4126;font-size:14px;">Backend features, Elasticsearch integration, document processing</p>
+<h4 style="margin:0 0 5px 0;color:#E6E6E6;">Ximkart</h4>
+<p style="margin:0;color:#9CA3AF;font-size:14px;">Software Engineering Intern | May 2023 – July 2023</p>
+<p style="margin:8px 0 0 0;color:#9CA3AF;font-size:14px;">First internship experience. Worked on backend features, Elasticsearch integration, and document processing.</p>
 </div>
+<img src="images/ximkart.png" style="height:30px;object-fit:contain;opacity:0.8;">
 </div>
 </div>
 
@@ -457,34 +520,34 @@ Software Engineering Intern | Dec 2023 – May 2024
 
 		
 
-		<section style="background:#f9fbff;padding:5rem 0;">
+		<section style="background:#151821;padding:5rem 0;">
 			<div class="container">
 				<div class="row mb-4">
 					<div class="col-md-10">
-						<h2>Lifestyle & Passions</h2>
-						<p class="mb-0" style="color:#6e6a65;">The things I prioritize outside the keyboard.</p>
+						<h2 style="color:#E6E6E6;">Lifestyle & Passions</h2>
+						<p class="mb-0" style="color:#6B7280;">The things I prioritize outside the keyboard.</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4 mb-3">
 						<div class="now-next-card">
-							<h4>💪 Strength & Fitness</h4>
+							<h4>💪 Strength & Wellness</h4>
 							<ul>
-								<li>Lifting is my meditation—consistent progressive training.</li>
-								<li>Obsessed with compound movements and proper form.</li>
-								<li>Part of my discipline philosophy: small daily wins compound.</li>
-								<li>Tracking macros, nutrition, and recovery as a lifestyle.</li>
+								<li>Strength training is my anchor—progressive, intentional, disciplined.</li>
+								<li>Yoga and meditation balance the intensity. Exploring slower, more mindful practices for recovery and awareness.</li>
+								<li>Obsessed with high-value living: quality over quantity in nutrition, sleep, relationships, and how I spend time.</li>
+								<li>Slow living philosophy—because sustainability and depth matter more than hustle.</li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-md-4 mb-3">
 						<div class="now-next-card">
-							<h4>🎭 Contemporary Dance</h4>
+							<h4>🎭 Dance</h4>
 							<ul>
-								<li>Dance is how I express what code cannot.</li>
-								<li>Contemporary practice keeps me grounded and creative.</li>
-								<li>The balance between control and flow fascinates me.</li>
-								<li>Moving my body teaches me more than my mind sometimes.</li>
+								<li>Trained kathak dancer for 10 years through rhythm and tradition.</li>
+								<li>Explored contemporary bollywood, blending classical precision with fluid storytelling.</li>
+								<li>Now actively exploring pure contemporary.</li>
+								<li>Dance is where I feel my body says what my words can't. It keeps me grounded, creative, and human.</li>
 							</ul>
 						</div>
 					</div>
@@ -505,12 +568,12 @@ Software Engineering Intern | Dec 2023 – May 2024
 
 		
 
-		<section class="now-next">
+		<section class="now-next" style="background: #0F1115;">
 			<div class="container">
 				<div class="row mb-4">
 					<div class="col-md-10">
-						<h2>Now and Next</h2>
-						<p class="mb-0" style="color:#6e6a65;">What I am focused on lately, both as an engineer and as a person.</p>
+						<h2 style="color:#E6E6E6;">Now and Next</h2>
+						<p class="mb-0" style="color:#6B7280;">What I am focused on lately, both as an engineer and as a person.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -518,9 +581,10 @@ Software Engineering Intern | Dec 2023 – May 2024
 						<div class="now-next-card">
 							<h4>Current focus</h4>
 							<ul>
-								<li>Building reliable backend services that stay fast and stable as users grow.</li>
-								<li>Learning to simplify complex architecture decisions for faster teams.</li>
-								<li>Building stronger product intuition by staying close to user behavior.</li>
+								<li>Building systems that are reliable, fast, and stay that way as they scale.</li>
+								<li>Learning constantly about architecture patterns, distributed systems, and how the pieces fit together.</li>
+								<li>Understanding product deeply by staying close to user needs and behaviors, not just code.</li>
+								<li>Growing alongside my team sharing knowledge, helping others ship better, building culture that values learning over speed.</li>
 							</ul>
 						</div>
 					</div>
@@ -531,7 +595,7 @@ Software Engineering Intern | Dec 2023 – May 2024
 								<li>Documenting travel experiences through photos and small stories.</li>
 								<li>Exploring how culture shapes design choices and user expectations.</li>
 								<li>Staying committed to workouts, health, and nutrition routines.</li>
-								<li>Mentoring and supporting early-career engineers.</li>
+								<li>Diving deeper into music rhythm, melody, and how sound shapes emotion and memory.</li>
 							</ul>
 						</div>
 					</div>
