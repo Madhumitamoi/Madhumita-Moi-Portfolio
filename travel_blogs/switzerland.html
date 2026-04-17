@@ -29,21 +29,47 @@
       }
 
       .blog-hero {
-        padding: 9.5rem 0 4.5rem;
-        background: linear-gradient(130deg, rgba(255, 247, 238, 0.86), rgba(239, 245, 252, 0.82)), url("../images/ice.jpg");
+        padding: 12rem 0 6rem;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("../travel_photography/switzerland/switzerland-mountain-reflection.png");
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
+        position: relative;
+      }
+
+      .blog-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 40%, rgba(247, 247, 248, 0.1) 100%);
+        pointer-events: none;
+      }
+
+      .blog-hero .container {
+        position: relative;
+        z-index: 1;
       }
 
       .blog-hero h1 {
         font-family: "Lora", serif;
-        color: #2c2a2a;
-        font-size: 2.7rem;
+        color: #fff;
+        font-size: 3.2rem;
+        font-weight: 700;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
       }
 
       .blog-hero p {
-        color: #5f5b57;
+        color: #f0f0f0;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         margin-bottom: 0;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        font-weight: 300;
       }
 
       .blog-wrap {
@@ -57,9 +83,21 @@
         padding: 1.3rem;
       }
 
+      .blog-card.photo-dump-card {
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+
       .blog-card h3 {
         font-family: "Lora", serif;
         font-size: 1.45rem;
+      }
+
+      .photo-dump-card h3 {
+        margin-bottom: 0.8rem;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
 
       .blog-card p {
@@ -76,39 +114,72 @@
 
       .photo-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.8rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        auto-rows: 280px;
       }
 
       .photo-item {
-        border-radius: 10px;
+        border-radius: 8px;
         overflow: hidden;
-        border: 1px solid #ececee;
-        background: #f2f2f3;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .photo-item:nth-child(2),
+      .photo-item:nth-child(5) {
+        grid-row: span 1.3;
+        auto-rows: 350px;
+      }
+
+      .photo-item:hover {
+        transform: translateY(-4px);
       }
 
       .photo-item img {
         width: 100%;
-        height: 190px;
+        height: 100%;
         object-fit: cover;
+        display: block;
       }
 
       .photo-item p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         margin: 0;
-        padding: 0.5rem 0.6rem;
-        font-size: 0.84rem;
-        color: #6c6c72;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .photo-item:hover p {
+        opacity: 1;
       }
 
       @media (max-width: 991.98px) {
         .photo-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(2, 1fr);
+          auto-rows: 250px;
+        }
+
+        .photo-item:nth-child(2),
+        .photo-item:nth-child(5) {
+          grid-row: span 1;
+          auto-rows: auto;
         }
       }
 
       @media (max-width: 575.98px) {
         .photo-grid {
           grid-template-columns: 1fr;
+          auto-rows: 300px;
+          gap: 1rem;
         }
       }
     </style>
@@ -150,26 +221,72 @@
     <section class="blog-wrap">
       <div class="container">
         <div class="blog-card mb-4">
-          <h3>Short Description</h3>
-          <p class="prompt">Add a short 2-3 line summary for this place. You can expand into a full blog later.</p>
-          <p>Use this as a quick intro for now: what the place felt like, one highlight, and one line about why it stayed with you.</p>
+          <h3>Switzerland</h3>
+          <p>Switzerland felt like a breath of fresh air: crisp alpine mornings, still lakes reflecting sharp mountain peaks, and quaint villages wrapped in mist. Every path led to another postcard-perfect view, and each relaxed moment was balanced by the thrill of reaching a higher ridge. These photos are the quiet lake scenes, the big sky mountain days, and the soft glow of rural Switzerland.</p>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card photo-dump-card">
           <h3>Photo Dump</h3>
-          <p class="prompt">Upload your photos first. Captions can stay simple now and be refined later.</p>
           <div class="photo-grid">
             <div class="photo-item">
-              <img src="../images/ice.jpg" alt="Switzerland photo 1" />
-              <p>Moment 1 caption</p>
+              <img src="../travel_photography/switzerland/switzerland-mountain-reflection.png" alt="Switzerland mountain reflection" />
+              <p>Mirror-like lake reflections in the mountains.</p>
             </div>
             <div class="photo-item">
-              <img src="../images/ice.jpg" alt="Switzerland photo 2" />
-              <p>Moment 2 caption</p>
+              <img src="../travel_photography/switzerland/switzerland-lake-morning.png" alt="Switzerland lake morning" />
+              <p>Morning light on a still alpine lake.</p>
             </div>
             <div class="photo-item">
-              <img src="../images/ice.jpg" alt="Switzerland photo 3" />
-              <p>Moment 3 caption</p>
+              <img src="../travel_photography/switzerland/switzerland-snowy-peak.png" alt="Switzerland snowy peak" />
+              <p>Snow-capped peaks reaching for the sky.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-glacier-valley.png" alt="Switzerland glacier valley" />
+              <p>A wide glacier valley with crisp air.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-alpine-village.png" alt="Switzerland alpine village" />
+              <p>Chalets clustered in a quiet alpine village.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-alpine-town.png" alt="Switzerland alpine town" />
+              <p>A picturesque town tucked between mountains.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-cable-car.png" alt="Switzerland cable car" />
+              <p>Cable cars rising into the misty highlands.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-forest-path.png" alt="Switzerland forest path" />
+              <p>A forest path lined with pine and moss.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-green-meadow.png" alt="Switzerland green meadow" />
+              <p>Green meadows opening under a wide blue sky.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-lake-dock.png" alt="Switzerland lake dock" />
+              <p>A wooden dock inviting a slow lakeside moment.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-mountain-hut.png" alt="Switzerland mountain hut" />
+              <p>A cozy hut perched above the valley floor.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-mist-morning.png" alt="Switzerland mist morning" />
+              <p>Misty mornings softening the mountain edges.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-sunset-peak.png" alt="Switzerland sunset peak" />
+              <p>Sunset warming the highest ridge.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-wooden-chalet.png" alt="Switzerland wooden chalet" />
+              <p>A wooden chalet framed by alpine greens.</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/switzerland/switzerland-starry-mountain.png" alt="Switzerland starry mountain" />
+              <p>Stars above the mountain silhouette after dark.</p>
             </div>
           </div>
         </div>

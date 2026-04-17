@@ -38,15 +38,52 @@
 				--home-muted: #9CA3AF;
 			}
 
-			.personality-hero {
-				padding: 10rem 0 6rem;
-				background: linear-gradient(135deg, #0F1115 0%, #151821 100%);
-			}
+				.personality-hero {
+					padding: 10rem 0 6rem;
+					background: linear-gradient(135deg, #0F1115 0%, #151821 100%);
+					position: relative;
+					overflow: hidden;
+				}
 
-			.eyebrow {
-				font-size: 12px;
-				font-weight: 700;
-				letter-spacing: 0.15em;
+				.personality-hero::before,
+				.personality-hero::after {
+					content: "";
+					position: absolute;
+					width: 520px;
+					height: 520px;
+					border-radius: 999px;
+					filter: blur(50px);
+					opacity: 0.55;
+					pointer-events: none;
+					mix-blend-mode: screen;
+					z-index: 0;
+				}
+
+				.personality-hero::before {
+					left: -180px;
+					top: -160px;
+					background: radial-gradient(circle at 30% 30%, rgba(124, 92, 255, 0.55), transparent 60%),
+						radial-gradient(circle at 70% 70%, rgba(45, 212, 191, 0.25), transparent 62%);
+					animation: heroBlob1 10s ease-in-out infinite alternate;
+				}
+
+				.personality-hero::after {
+					right: -200px;
+					bottom: -220px;
+					background: radial-gradient(circle at 35% 35%, rgba(124, 92, 255, 0.35), transparent 62%),
+						radial-gradient(circle at 70% 60%, rgba(250, 204, 21, 0.22), transparent 64%);
+					animation: heroBlob2 12s ease-in-out infinite alternate;
+				}
+
+				.personality-hero .container {
+					position: relative;
+					z-index: 1;
+				}
+
+				.eyebrow {
+					font-size: 12px;
+					font-weight: 700;
+					letter-spacing: 0.15em;
 				text-transform: uppercase;
 				color: var(--home-accent);
 				margin-bottom: 1rem;
@@ -64,6 +101,14 @@
 				line-height: 1.8;
 				color: var(--home-muted);
 				max-width: 640px;
+			}
+
+			.hero-motto {
+				margin: 1.25rem 0 1.75rem;
+				color: rgba(230, 230, 230, 0.8);
+				max-width: 620px;
+				font-size: 1rem;
+				line-height: 1.7;
 			}
 
 			.hero-tags span {
@@ -84,23 +129,189 @@
 				box-shadow: 0 20px 45px rgba(124, 92, 255, 0.2);
 			}
 
+			.hero-image-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+			}
+
+				.hero-image-grid img {
+					display: block;
+					width: 100%;
+					height: auto;
+					object-fit: cover;
+				}
+
+				@keyframes heroFloat {
+					0% { transform: translateY(0) rotate(0deg) scale(1); }
+					100% { transform: translateY(-14px) rotate(-1deg) scale(1.02); }
+				}
+
+			@keyframes heroFloatAlt {
+				0% { transform: translateY(0) rotate(0deg) scale(1); }
+				100% { transform: translateY(-10px) rotate(1.5deg) scale(1.01); }
+			}
+
+			@keyframes fadeInUp {
+				0% { opacity: 0; transform: translateY(20px); }
+				100% { opacity: 1; transform: translateY(0); }
+			}
+
+			@keyframes cardPop {
+				0% { opacity: 0; transform: translateY(24px); }
+				100% { opacity: 1; transform: translateY(0); }
+			}
+
+				@keyframes glowPulse {
+					0%, 100% { opacity: 0.9; transform: translateY(0) scale(1); }
+					50% { opacity: 0.75; transform: translateY(-4px) scale(1.01); }
+				}
+
+				@keyframes heroBlob1 {
+					0% { transform: translate3d(0, 0, 0) scale(1); }
+					100% { transform: translate3d(40px, 26px, 0) scale(1.05); }
+				}
+
+				@keyframes heroBlob2 {
+					0% { transform: translate3d(0, 0, 0) scale(1); }
+					100% { transform: translate3d(-36px, -28px, 0) scale(1.06); }
+				}
+
+				@media (prefers-reduced-motion: no-preference) {
+					.hero-main-portrait {
+						animation: heroFloat 8s ease-in-out infinite alternate;
+					}
+
+					.hero-swiss-portrait {
+						animation: heroFloatAlt 10s ease-in-out infinite alternate;
+					}
+				}
+
+				.personality-hero .btn {
+					position: relative;
+					overflow: hidden;
+					transform: translate3d(0, 0, 0);
+				}
+
+				.personality-hero .btn::after {
+					content: "";
+					position: absolute;
+					inset: -2px;
+					background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.18) 45%, transparent 60%);
+					transform: translateX(-120%);
+					transition: transform 500ms ease;
+					pointer-events: none;
+				}
+
+				.personality-hero .btn:hover::after {
+					transform: translateX(120%);
+				}
+
+				@media (max-width: 991.98px) {
+					.hero-image-grid {
+						grid-template-columns: 1fr;
+					}
+				}
+
 			.soft-section {
 				background: #151821;
 				padding: 5rem 0;
+				overflow: hidden;
 			}
 
-			.story-card {
-				background: #1B1F2A;
-				border: 1px solid #232735;
-				border-radius: 16px;
-				padding: 1.4rem;
-				height: 100%;
-				box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);
+				.story-card {
+					position: relative;
+					background: #1B1F2A;
+					border: 1px solid #232735;
+					border-radius: 16px;
+					padding: 1.4rem;
+					height: 100%;
+					box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);
+					transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+				}
+
+				.story-card:hover {
+					transform: translateY(-6px);
+					border-color: #7C5CFF;
+					box-shadow: 0 30px 55px rgba(124, 92, 255, 0.2);
 			}
 
 			.story-card h4 {
 				font-size: 1.1rem;
 				color: var(--home-ink);
+			}
+
+			.lifestyle-section {
+				background: #151821;
+				padding: 5rem 0;
+				overflow: hidden;
+			}
+
+				.lifestyle-section .now-next-card:hover {
+					transform: translateY(-6px);
+					border-color: #7C5CFF;
+					box-shadow: 0 30px 55px rgba(124, 92, 255, 0.2);
+				}
+
+			.soft-section,
+			.lifestyle-section,
+			.now-next {
+				position: relative;
+				overflow: hidden;
+				z-index: 0;
+			}
+
+			.soft-section::before,
+			.lifestyle-section::before,
+			.now-next::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				pointer-events: none;
+				background: radial-gradient(circle at 20% 25%, rgba(124, 92, 255, 0.18), transparent 24%),
+					 radial-gradient(circle at 80% 60%, rgba(124, 92, 255, 0.1), transparent 28%);
+				opacity: 0.9;
+				mix-blend-mode: screen;
+				animation: glowPulse 6s ease-in-out infinite;
+				z-index: -1;
+			}
+
+				.now-next .now-next-card:hover {
+					transform: translateY(-6px);
+					border-color: #7C5CFF;
+					box-shadow: 0 30px 55px rgba(124, 92, 255, 0.2);
+				}
+
+				@media (prefers-reduced-motion: reduce) {
+					.personality-hero::before,
+					.personality-hero::after {
+						animation: none !important;
+					}
+
+					.hero-main-portrait,
+					.hero-swiss-portrait {
+						animation: none !important;
+					}
+				}
+
+			.now-next .now-next-card::before,
+			.lifestyle-section .now-next-card::before,
+			.story-card::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.06), transparent 40%),
+					 radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.05), transparent 35%);
+				pointer-events: none;
+				opacity: 0.5;
+				transition: opacity 0.35s ease;
+				z-index: -1;
+			}
+
+			.now-next .now-next-card:hover::before,
+			.lifestyle-section .now-next-card:hover::before,
+			.story-card:hover::before {
+				opacity: 1;
 			}
 
 			.story-card p {
@@ -262,95 +473,123 @@
 		</nav>
 		<!-- END nav -->
 
-		<section class="personality-hero">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-7">
-						<p class="eyebrow">Engineer, Explorer, Dancer, Lifter, Music lover</p>
-						<h1 class="hero-title">Hi, I'm Madhumita.<br />somewhere between code, music, and last-minute trips.</h1>
-						<p class="hero-sub">
-							Software engineer at Dream11 building systems for scale. But equally passionate about travel storytelling, fitness, dance, and the pursuit of health and discipline in everything I do. Life's too short to be one-dimensional.
-						</p>
-						<div class="hero-tags mb-4">
-							<span>Backend Engineer</span>
-							<span>Travel Storytelling</span>
-							<span>Fitness</span>
-							<span>Music Lover</span>
-							<span>Dance</span>
+			<section class="personality-hero">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-7" data-aos="fade-up">
+							<p class="eyebrow">Engineer, Explorer, Dancer, Lifter, Music lover</p>
+							<h1 class="hero-title">Hi, I'm Madhumita.<br />somewhere between code, music, and last-minute trips.</h1>
+							<p class="hero-sub">
+								Software engineer at Dream11 building systems for scale. But equally passionate about travel storytelling, fitness, dance, and the pursuit of health and discipline in everything I do. Life's too short to be one-dimensional.
+							</p>
+							<div class="hero-tags mb-4">
+								<span>Backend Engineer</span>
+								<span>Travel Storytelling</span>
+								<span>Fitness</span>
+								<span>Music Lover</span>
+								<span>Dance</span>
+							</div>
+							<p class="hero-motto">Showing different sides of myself through travel, code, and curiosity.</p>
+							<a href="/contact.html" class="btn btn-primary mr-2">Let's Connect</a>
+							<a href="/images/Madhumita_Moi_Resume_2026.pdf" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">
+								<span class="icon-file-pdf-o mr-1"></span> Resume
+							</a>
 						</div>
-						<a href="/contact.html" class="btn btn-primary mr-2">Let's Connect</a>
-						<a href="/images/Madhumita_Moi_Resume_2026.pdf" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">
-							<span class="icon-file-pdf-o mr-1"></span> Resume
-						</a>
-					</div>
-					<div class="col-lg-5 mt-4 mt-lg-0">
-						<img src="images/madhumita.jpeg" alt="Madhumita Moi portrait" class="hero-portrait">
+						<div class="col-lg-5 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="120">
+							<div class="hero-image-grid">
+								<img src="images/madhumita.jpeg" alt="Madhumita Moi portrait" class="hero-portrait hero-main-portrait">
+								<img src="images/me-in-swiss.png" alt="Madhumita in Switzerland" class="hero-portrait hero-swiss-portrait">
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
 		<!-- Currently Listening -->
-		<section style="background: #0F1115; padding: 2rem 0; border-top: 1px solid #232735; border-bottom: 1px solid #232735;">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-md-1 text-center">
-					<div style="width: 40px; height: 40px; background: #7C5CFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse 2s ease-in-out infinite; box-shadow: 0 0 20px rgba(124, 92, 255, 0.3);">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));">
-							<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-12.041-1.409-.479.12-1.02-.209-1.14-.66-.12-.48.209-1.02.66-1.141C9.6 9.9 15.079 10.561 18.739 12.841c.361.22.599.659.301 1.1zm.140-3.45c-3.9-2.3-10.561-2.581-14.621-1.425-.479.119-1.02-.209-1.14-.678-.12-.48.209-1.02.678-1.141C9.121 1.861 16.563 2.139 21.017 4.981c.361.219.599.659.301 1.099-.3.481-.899.599-1.301.301z"/>
-						</svg>
-					</div>
+			<section style="background: #0F1115; padding: 2rem 0; border-top: 1px solid #232735; border-bottom: 1px solid #232735;">
+				<div class="container">
+					<div class="row align-items-center" data-aos="fade-up">
+						<div class="col-md-1 text-center">
+						<div class="now-playing-indicator" style="width: 40px; height: 40px; background: #7C5CFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(124, 92, 255, 0.3);">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));">
+								<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-12.041-1.409-.479.12-1.02-.209-1.14-.66-.12-.48.209-1.02.66-1.141C9.6 9.9 15.079 10.561 18.739 12.841c.361.22.599.659.301 1.1zm.140-3.45c-3.9-2.3-10.561-2.581-14.621-1.425-.479.119-1.02-.209-1.14-.678-.12-.48.209-1.02.678-1.141C9.121 1.861 16.563 2.139 21.017 4.981c.361.219.599.659.301 1.099-.3.481-.899.599-1.301.301z"/>
+							</svg>
+						</div>
 					</div>
 					<div class="col-md-7">
 						<p style="font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Now Playing</p>
 						<h4 style="font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 0.25rem; color: #E6E6E6;">Comfort Playlist</h4>
 						<p style="color: #9CA3AF; font-size: 13px; margin: 0;">Always in between melodic techno, electronic, ambient.</p>
 					</div>
-					<div class="col-md-4 text-md-right mt-3 mt-md-0">
-						<a href="https://open.spotify.com/playlist/571tuHFKczNXRFvNujSpyb?si=14079fea5f4d461d" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #7C5CFF; color: white; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s ease; border: none; box-shadow: 0 0 20px rgba(124, 92, 255, 0.2);">
-							<span>▶</span> Play
-						</a>
-					</div>
+						<div class="col-md-4 text-md-right mt-3 mt-md-0">
+							<a href="https://open.spotify.com/playlist/571tuHFKczNXRFvNujSpyb?si=14079fea5f4d461d" target="_blank" rel="noopener noreferrer" class="now-playing-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #7C5CFF; color: white; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s ease; border: none; box-shadow: 0 0 20px rgba(124, 92, 255, 0.2);">
+								<span>▶</span> Play
+							</a>
+						</div>
 				</div>
 			</div>
 
-			<style>
-				@keyframes pulse {
-					0%, 100% { opacity: 1; }
-					50% { opacity: 0.5; }
-				}
-			</style>
-		</section>
+					<style>
+						@keyframes pulse {
+							0%, 100% { opacity: 1; }
+							50% { opacity: 0.5; }
+						}
 
-		<section class="soft-section">
-			<div class="container">
-				<div class="row mb-4">
-					<div class="col-md-10">
-						<h2>What moves me</h2>
-						<p class="mb-0" style="color: #6B7280;">
-							I live at the intersection of complexity and creativity—building reliable systems, chasing new horizons, and pushing my limits.
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 mb-3">
-						<div class="story-card">
-							<h4>🔧 As an Engineer</h4>
-							<p>I design systems that scale and stay reliable. I care about clean architecture, developer experience, and shipping product that users love.</p>
+						.now-playing-indicator {
+							animation: pulse 2s ease-in-out infinite;
+						}
+
+						.now-playing-btn:hover {
+							transform: translateY(-2px);
+							filter: drop-shadow(0 10px 22px rgba(124, 92, 255, 0.25));
+						}
+
+						.now-playing-btn span {
+							display: inline-block;
+							transition: transform 0.2s ease;
+						}
+
+						.now-playing-btn:hover span {
+							transform: translateX(2px);
+						}
+
+						@media (prefers-reduced-motion: reduce) {
+							.now-playing-indicator {
+								animation: none !important;
+							}
+						}
+					</style>
+				</section>
+
+			<section class="soft-section">
+				<div class="container">
+					<div class="row mb-4">
+						<div class="col-md-10">
+							<h2 data-aos="fade-up">What moves me</h2>
+							<p class="mb-0" style="color: #6B7280;" data-aos="fade-up" data-aos-delay="80">
+								I live at the intersection of complexity and creativity—building reliable systems, chasing new horizons, and pushing my limits.
+							</p>
 						</div>
 					</div>
-					<div class="col-md-4 mb-3">
-						<div class="story-card">
-							<h4>✈️ As a Traveler</h4>
-							<p>I document stories through photos and writing. Travel for me is about understanding cultures, meeting people, and capturing moments that matter.</p>
+					<div class="row">
+						<div class="col-md-4 mb-3">
+							<div class="story-card" data-aos="fade-up">
+								<h4>🔧 As an Engineer</h4>
+								<p>I design systems that scale and stay reliable. I care about clean architecture, developer experience, and shipping product that users love.</p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-4 mb-3">
-						<div class="story-card">
-							<h4>💪 As a Person</h4>
-							<p>I'm learning to be disciplined about strength, health, and growth. Whether it's lifting, dance, or nutrition—I believe in consistency and pushing limits every day.</p>
+						<div class="col-md-4 mb-3">
+							<div class="story-card" data-aos="fade-up" data-aos-delay="100">
+								<h4>✈️ As a Traveler</h4>
+								<p>I document stories through photos and writing. Travel for me is about understanding cultures, meeting people, and capturing moments that matter.</p>
+							</div>
 						</div>
-					</div>
+						<div class="col-md-4 mb-3">
+							<div class="story-card" data-aos="fade-up" data-aos-delay="200">
+								<h4>💪 As a Person</h4>
+								<p>I'm learning to be disciplined about strength, health, and growth. Whether it's lifting, dance, or nutrition—I believe in consistency and pushing limits every day.</p>
+							</div>
+						</div>
 				</div>
 			</div>
 		</section>
@@ -405,15 +644,15 @@
   <div class="row justify-content-center pb-3">
     <div class="col-md-12 mb-5 text-center">
 
-<h2 class="work-heading" style="color: #E6E6E6;">
-		        Professional <span style="color:#7C5CFF;">Journey</span>
-      </h2>
+<h2 class="work-heading" style="color: #E6E6E6;" data-aos="fade-up">
+			        Professional <span style="color:#7C5CFF;">Journey</span>
+	      </h2>
 
     </div>
   </div>
 </div>
 
-<div class="skills-band">
+<div class="skills-band" data-aos="fade-up" data-aos-delay="120">
 	<!-- <h3>Skills That Power My Work</h3> -->
 	<div class="skills-group">
 		<p class="skills-label">Core Stack</p>
@@ -446,9 +685,10 @@
 <!-- Dream11 -->
 
 <div style="max-width:900px;margin:auto;background:#1B1F2A;padding:30px;border-radius:12px;border:1px solid #232735;
-box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);margin-bottom:40px;position:relative;"
-onmouseover="this.style.transform='translateY(-5px)'; this.style.transition='0.3s'; this.style.background='#232735';"
-onmouseout="this.style.transform='translateY(0px)'; this.style.background='#1B1F2A';">
+	box-shadow: 0 0 20px rgba(124, 92, 255, 0.1);margin-bottom:40px;position:relative;"
+	data-aos="fade-up"
+	onmouseover="this.style.transform='translateY(-5px)'; this.style.transition='0.3s'; this.style.background='#232735';"
+	onmouseout="this.style.transform='translateY(0px)'; this.style.background='#1B1F2A';">
 
 <img src="images/dream11.png"
 style="position:absolute;top:25px;right:25px;height:42px;object-fit:contain;opacity:0.9;">
@@ -475,7 +715,7 @@ Software Engineer | May 2025 – Present
 </div>
 
 
-<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:15px;border:1px solid #232735;">
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:15px;border:1px solid #232735;" data-aos="fade-up" data-aos-delay="80">
 <div style="display:flex;justify-content:space-between;align-items:start;">
 <div>
 <h4 style="margin:0 0 5px 0;color:#E6E6E6;">Zomato</h4>
@@ -489,7 +729,7 @@ Software Engineer | May 2025 – Present
 
 <!-- VIRGIO -->
 
-<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:15px;border:1px solid #232735;">
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:15px;border:1px solid #232735;" data-aos="fade-up" data-aos-delay="120">
 <div style="display:flex;justify-content:space-between;align-items:start;">
 <div>
 <h4 style="margin:0 0 5px 0;color:#E6E6E6;">Virgio</h4>
@@ -503,7 +743,7 @@ Software Engineer | May 2025 – Present
 
 <!-- XIMKART -->
 
-<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:40px;border:1px solid #232735;">
+<div style="max-width:900px;margin:auto;background:#1B1F2A;padding:20px;border-left:4px solid #7C5CFF;border-radius:4px;margin-bottom:40px;border:1px solid #232735;" data-aos="fade-up" data-aos-delay="160">
 <div style="display:flex;justify-content:space-between;align-items:start;">
 <div>
 <h4 style="margin:0 0 5px 0;color:#E6E6E6;">Ximkart</h4>
@@ -520,41 +760,41 @@ Software Engineer | May 2025 – Present
 
 		
 
-		<section style="background:#151821;padding:5rem 0;">
-			<div class="container">
-				<div class="row mb-4">
-					<div class="col-md-10">
-						<h2 style="color:#E6E6E6;">Lifestyle & Passions</h2>
-						<p class="mb-0" style="color:#6B7280;">The things I prioritize outside the keyboard.</p>
+			<section class="lifestyle-section" style="background:#151821;padding:5rem 0;">
+				<div class="container">
+					<div class="row mb-4">
+						<div class="col-md-10">
+							<h2 style="color:#E6E6E6;" data-aos="fade-up">Lifestyle & Passions</h2>
+							<p class="mb-0" style="color:#6B7280;" data-aos="fade-up" data-aos-delay="80">The things I prioritize outside the keyboard.</p>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 mb-3">
-						<div class="now-next-card">
-							<h4>💪 Strength & Wellness</h4>
-							<ul>
-								<li>Strength training is my anchor—progressive, intentional, disciplined.</li>
+					<div class="row">
+						<div class="col-md-4 mb-3">
+							<div class="now-next-card" data-aos="fade-up">
+								<h4>💪 Strength & Wellness</h4>
+								<ul>
+									<li>Strength training is my anchor—progressive, intentional, disciplined.</li>
 								<li>Yoga and meditation balance the intensity. Exploring slower, more mindful practices for recovery and awareness.</li>
 								<li>Obsessed with high-value living: quality over quantity in nutrition, sleep, relationships, and how I spend time.</li>
 								<li>Slow living philosophy—because sustainability and depth matter more than hustle.</li>
 							</ul>
 						</div>
-					</div>
-					<div class="col-md-4 mb-3">
-						<div class="now-next-card">
-							<h4>🎭 Dance</h4>
-							<ul>
+						</div>
+						<div class="col-md-4 mb-3">
+							<div class="now-next-card" data-aos="fade-up" data-aos-delay="100">
+								<h4>🎭 Dance</h4>
+								<ul>
 								<li>Trained kathak dancer for 10 years through rhythm and tradition.</li>
 								<li>Explored contemporary bollywood, blending classical precision with fluid storytelling.</li>
 								<li>Now actively exploring pure contemporary.</li>
 								<li>Dance is where I feel my body says what my words can't. It keeps me grounded, creative, and human.</li>
 							</ul>
 						</div>
-					</div>
-					<div class="col-md-4 mb-3">
-						<div class="now-next-card">
-							<h4>✈️ Travel & Stories</h4>
-							<ul>
+						</div>
+						<div class="col-md-4 mb-3">
+							<div class="now-next-card" data-aos="fade-up" data-aos-delay="200">
+								<h4>✈️ Travel & Stories</h4>
+								<ul>
 								<li>Documenting places through photography and writing.</li>
 								<li>Each trip is about understanding people and cultures.</li>
 								<li>I believe travel makes you more empathetic and humble.</li>
@@ -568,31 +808,31 @@ Software Engineer | May 2025 – Present
 
 		
 
-		<section class="now-next" style="background: #0F1115;">
-			<div class="container">
-				<div class="row mb-4">
-					<div class="col-md-10">
-						<h2 style="color:#E6E6E6;">Now and Next</h2>
-						<p class="mb-0" style="color:#6B7280;">What I am focused on lately, both as an engineer and as a person.</p>
+			<section class="now-next" style="background: #0F1115;">
+				<div class="container">
+					<div class="row mb-4">
+						<div class="col-md-10">
+							<h2 style="color:#E6E6E6;" data-aos="fade-up">Now and Next</h2>
+							<p class="mb-0" style="color:#6B7280;" data-aos="fade-up" data-aos-delay="80">What I am focused on lately, both as an engineer and as a person.</p>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 mb-3">
-						<div class="now-next-card">
-							<h4>Current focus</h4>
-							<ul>
-								<li>Building systems that are reliable, fast, and stay that way as they scale.</li>
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<div class="now-next-card" data-aos="fade-up">
+								<h4>Current focus</h4>
+								<ul>
+									<li>Building systems that are reliable, fast, and stay that way as they scale.</li>
 								<li>Learning constantly about architecture patterns, distributed systems, and how the pieces fit together.</li>
 								<li>Understanding product deeply by staying close to user needs and behaviors, not just code.</li>
 								<li>Growing alongside my team sharing knowledge, helping others ship better, building culture that values learning over speed.</li>
 							</ul>
 						</div>
-					</div>
-					<div class="col-md-6 mb-3">
-						<div class="now-next-card">
-							<h4>Personal side quests</h4>
-							<ul>
-								<li>Documenting travel experiences through photos and small stories.</li>
+						</div>
+						<div class="col-md-6 mb-3">
+							<div class="now-next-card" data-aos="fade-up" data-aos-delay="120">
+								<h4>Personal side quests</h4>
+								<ul>
+									<li>Documenting travel experiences through photos and small stories.</li>
 								<li>Exploring how culture shapes design choices and user expectations.</li>
 								<li>Staying committed to workouts, health, and nutrition routines.</li>
 								<li>Diving deeper into music rhythm, melody, and how sound shapes emotion and memory.</li>

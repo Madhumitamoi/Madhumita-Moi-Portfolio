@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Rome | Travel Blog | Madhumita Moi</title>
+    <link rel="icon" type="image/png" href="../images/M.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,500,600,700" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/animate.css" />
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="../css/magnific-popup.css" />
+    <link rel="stylesheet" href="../css/aos.css" />
+    <link rel="stylesheet" href="../css/ionicons.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="../css/jquery.timepicker.css" />
+    <link rel="stylesheet" href="../css/flaticon.css" />
+    <link rel="stylesheet" href="../css/icomoon.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      body {
+        background: #f7f7f8;
+        color: #1f1f22;
+      }
+
+      .blog-hero {
+        padding: 12rem 0 6rem;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("../travel_photography/rome/rome/rome-colosseum-ancient.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+      }
+
+      .blog-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 40%, rgba(247, 247, 248, 0.1) 100%);
+        pointer-events: none;
+      }
+
+      .blog-hero .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .blog-hero h1 {
+        font-family: "Lora", serif;
+        color: #fff;
+        font-size: 3.2rem;
+        font-weight: 700;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
+      }
+
+      .blog-hero p {
+        color: #f0f0f0;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+      }
+
+      .blog-wrap {
+        padding: 4rem 0;
+      }
+
+      .blog-card {
+        background: #fff;
+        border: 1px solid #ececee;
+        border-radius: 14px;
+        padding: 1.3rem;
+      }
+
+      .blog-card.photo-dump-card {
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+
+      .blog-card h3 {
+        font-family: "Lora", serif;
+        font-size: 1.45rem;
+      }
+
+      .photo-dump-card h3 {
+        margin-bottom: 0.8rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .blog-card p {
+        color: #64646b;
+        line-height: 1.8;
+      }
+
+      .prompt {
+        border-left: 3px solid #cf8b57;
+        padding-left: 0.9rem;
+        font-size: 0.94rem;
+        color: #7a6250;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        auto-rows: 280px;
+      }
+
+      .photo-item {
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .photo-item:nth-child(2),
+      .photo-item:nth-child(5) {
+        grid-row: span 1.3;
+        auto-rows: 350px;
+      }
+
+      .photo-item:hover {
+        transform: translateY(-4px);
+      }
+
+      .photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .photo-item p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .photo-item:hover p {
+        opacity: 1;
+      }
+
+      @media (max-width: 991.98px) {
+        .photo-grid {
+          grid-template-columns: repeat(2, 1fr);
+          auto-rows: 250px;
+        }
+
+        .photo-item:nth-child(2),
+        .photo-item:nth-child(5) {
+          grid-row: span 1;
+          auto-rows: auto;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .photo-grid {
+          grid-template-columns: 1fr;
+          auto-rows: 300px;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Madhumita</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="../work.html" class="nav-link">Work</a></li>
+            <li class="nav-item active"><a href="../travel.html" class="nav-link">Travel</a></li>
+            <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="blog-hero">
+      <div class="container">
+        <h1>Rome</h1>
+        <p>Italy | eternal city, ancient wonders, and Italian romance</p>
+      </div>
+    </section>
+
+    <section class="blog-wrap">
+      <div class="container">
+        <div class="blog-card mb-4">
+          <h3>Rome</h3>
+          <p>Rome is where history comes alive - ancient ruins that whisper stories of emperors and gladiators, piazzas that buzz with modern Italian life, and gelato that tastes like liquid sunshine. From throwing coins into the Trevi Fountain to wandering the Colosseum at sunset, every corner holds a piece of eternity. The city's chaotic energy, the warmth of its people, and the perfect blend of ancient and modern created memories that feel as timeless as the city itself.</p>
+        </div>
+
+        <div class="blog-card photo-dump-card">
+          <h3>Photo Dump</h3>
+          <div class="photo-grid">
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-colosseum-ancient.png" alt="Ancient Colosseum in Rome" />
+              <p>Where gladiators once fought and history echoes</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-trevi-fountain-wish.png" alt="Trevi Fountain wish" />
+              <p>Making wishes that come true</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-pantheon-classical.png" alt="Classical Pantheon architecture" />
+              <p>Perfection in stone and symmetry</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-spanish-steps-view.png" alt="Spanish Steps panoramic view" />
+              <p>Steps that lead to breathtaking vistas</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-vatican-st-peters.png" alt="Vatican St. Peter's Basilica" />
+              <p>Spiritual majesty in marble and gold</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-piazza-navona.png" alt="Piazza Navona square" />
+              <p>Where art and life converge in harmony</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-forum-ruins.png" alt="Roman Forum ruins" />
+              <p>Ancient stones telling epic tales</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-bridge-tiber.png" alt="Bridge over Tiber River" />
+              <p>Connecting past and present gracefully</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-street-cafe.png" alt="Authentic Roman street cafe" />
+              <p>Where every meal feels like a celebration</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-gelato-traditional.png" alt="Traditional Italian gelato" />
+              <p>Sweet moments of pure indulgence</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-evening-stroll.png" alt="Evening stroll through Rome" />
+              <p>When the city glows with golden light</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-cat-sightseeing.png" alt="Cat sightseeing in Rome" />
+              <p>Feline friends exploring the eternal city</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-landscape-vista.png" alt="Roman landscape vista" />
+              <p>Views that span centuries and continents</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/rome/rome/rome-architecture-detail.png" alt="Roman architecture detail" />
+              <p>Intricate beauty in every stone carving</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <script src="../js/jquery.stellar.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/jquery.animateNumber.min.js"></script>
+    <script src="../js/scrollax.min.js"></script>
+    <script src="../js/google-map.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
+</html>

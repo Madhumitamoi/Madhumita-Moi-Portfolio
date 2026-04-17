@@ -29,21 +29,47 @@
       }
 
       .blog-hero {
-        padding: 9.5rem 0 4.5rem;
-        background: linear-gradient(130deg, rgba(255, 247, 238, 0.86), rgba(239, 245, 252, 0.82)), url("../images/ice.jpg");
+        padding: 12rem 0 6rem;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("../travel_photography/manali/manali-mountain-sunset.png");
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
+        position: relative;
+      }
+
+      .blog-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 40%, rgba(247, 247, 248, 0.1) 100%);
+        pointer-events: none;
+      }
+
+      .blog-hero .container {
+        position: relative;
+        z-index: 1;
       }
 
       .blog-hero h1 {
         font-family: "Lora", serif;
-        color: #2c2a2a;
-        font-size: 2.7rem;
+        color: #fff;
+        font-size: 3.2rem;
+        font-weight: 700;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
       }
 
       .blog-hero p {
-        color: #5f5b57;
+        color: #f0f0f0;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         margin-bottom: 0;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        font-weight: 300;
       }
 
       .blog-wrap {
@@ -57,9 +83,21 @@
         padding: 1.3rem;
       }
 
+      .blog-card.photo-dump-card {
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+
       .blog-card h3 {
         font-family: "Lora", serif;
         font-size: 1.45rem;
+      }
+
+      .photo-dump-card h3 {
+        margin-bottom: 0.8rem;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
 
       .blog-card p {
@@ -76,39 +114,72 @@
 
       .photo-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.8rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        auto-rows: 280px;
       }
 
       .photo-item {
-        border-radius: 10px;
+        border-radius: 8px;
         overflow: hidden;
-        border: 1px solid #ececee;
-        background: #f2f2f3;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .photo-item:nth-child(2),
+      .photo-item:nth-child(5) {
+        grid-row: span 1.3;
+        auto-rows: 350px;
+      }
+
+      .photo-item:hover {
+        transform: translateY(-4px);
       }
 
       .photo-item img {
         width: 100%;
-        height: 190px;
+        height: 100%;
         object-fit: cover;
+        display: block;
       }
 
       .photo-item p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         margin: 0;
-        padding: 0.5rem 0.6rem;
-        font-size: 0.84rem;
-        color: #6c6c72;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .photo-item:hover p {
+        opacity: 1;
       }
 
       @media (max-width: 991.98px) {
         .photo-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(2, 1fr);
+          auto-rows: 250px;
+        }
+
+        .photo-item:nth-child(2),
+        .photo-item:nth-child(5) {
+          grid-row: span 1;
+          auto-rows: auto;
         }
       }
 
       @media (max-width: 575.98px) {
         .photo-grid {
           grid-template-columns: 1fr;
+          auto-rows: 300px;
+          gap: 1rem;
         }
       }
     </style>
@@ -143,33 +214,79 @@
     <section class="blog-hero">
       <div class="container">
         <h1>Manali & Kasol</h1>
-        <p>Himachal Pradesh | cold air warm food and long nights</p>
+        <p>Himachal Pradesh | mountains, adventure, and mountain culture</p>
       </div>
     </section>
 
     <section class="blog-wrap">
       <div class="container">
         <div class="blog-card mb-4">
-          <h3>Short Description</h3>
-          <p class="prompt">Add a short 2-3 line summary for this place. You can expand into a full blog later.</p>
-          <p>Use this as a quick intro for now: what the place felt like, one highlight, and one line about why it stayed with you.</p>
+          <h3>Manali & Kasol</h3>
+          <p>Manali and Kasol were a perfect blend of adventure and tranquility - snow-capped peaks that touch the sky, rivers that roar with mountain energy, and valleys that whisper ancient stories. From paragliding over pine forests to cozy cafes in Kasol, every moment was a reminder that some of life's greatest joys are found in nature's embrace. The crisp mountain air, the warmth of local hospitality, and the serenity of Himalayan temples created memories that feel like they were carved from the mountains themselves.</p>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card photo-dump-card">
           <h3>Photo Dump</h3>
-          <p class="prompt">Upload your photos first. Captions can stay simple now and be refined later.</p>
           <div class="photo-grid">
             <div class="photo-item">
-              <img src="../images/ice.jpg" alt="Manali & Kasol photo 1" />
-              <p>Moment 1 caption</p>
+              <img src="../travel_photography/manali/manali-mountain-sunset.png" alt="Manali mountain sunset" />
+              <p>Where mountains meet the setting sun</p>
             </div>
             <div class="photo-item">
-              <img src="../images/ice.jpg" alt="Manali & Kasol photo 2" />
-              <p>Moment 2 caption</p>
+              <img src="../travel_photography/manali/manali-snow-peaks.png" alt="Snow-capped peaks" />
+              <p>Majestic guardians of the valley</p>
             </div>
             <div class="photo-item">
-              <img src="../images/ice.jpg" alt="Manali & Kasol photo 3" />
-              <p>Moment 3 caption</p>
+              <img src="../travel_photography/manali/manali-valley-serene.png" alt="Serene mountain valley" />
+              <p>Peace that echoes through the ages</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-river-flow.png" alt="Flowing mountain river" />
+              <p>The lifeblood of the mountains</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-himalayan-vista.png" alt="Himalayan vista" />
+              <p>Views that take your breath away</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-forest-path.png" alt="Forest path in Manali" />
+              <p>Paths that lead to hidden wonders</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-traditional-architecture.png" alt="Traditional Himachali architecture" />
+              <p>Stories written in stone and wood</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-temple-prayer.png" alt="Temple prayers" />
+              <p>Spiritual echoes in mountain air</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-local-culture.png" alt="Local Himachali culture" />
+              <p>Traditions passed through generations</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-street-market.png" alt="Mountain street market" />
+              <p>Where locals and travelers meet</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-cafe-cozy.png" alt="Cozy mountain cafe" />
+              <p>Warmth amidst the mountain chill</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-adventure-ready.png" alt="Adventure preparation" />
+              <p>Ready for mountain adventures</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-bridge-view.png" alt="Bridge over mountain river" />
+              <p>Connecting paths and perspectives</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-morning-mist.png" alt="Morning mist in mountains" />
+              <p>Magic that greets each new day</p>
+            </div>
+            <div class="photo-item">
+              <img src="../travel_photography/manali/manali-starlit-night.png" alt="Starlit mountain night" />
+              <p>When the mountains dream under stars</p>
             </div>
           </div>
         </div>
