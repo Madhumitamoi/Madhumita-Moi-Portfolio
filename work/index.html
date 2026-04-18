@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Madhumita Moi</title>
+  <link rel="icon" type="image/png" href="images/M.png" />
+
+  <meta charset="utf-8">
+  <base href="../" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .drives-section {
+      background: linear-gradient(180deg, #0d1015 0%, #13161c 42%, #121319 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0;
+      color: #ececec;
+    }
+    .drives-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 25%, rgba(249,109,0,0.14), transparent 22%),
+                  radial-gradient(circle at 85% 25%, rgba(124,92,255,0.12), transparent 26%),
+                  radial-gradient(circle at 50% 80%, rgba(255,255,255,0.08), transparent 28%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: glowShift 8s ease-in-out infinite;
+      z-index: 0;
+    }
+    .drives-panel {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 30px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.25);
+      padding: 3rem 2.4rem;
+      overflow: hidden;
+      animation: floatCard 12s ease-in-out infinite alternate;
+    }
+    .drives-panel::after {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(249,109,0,0.16);
+      top: -60px;
+      right: -60px;
+      filter: blur(36px);
+      pointer-events: none;
+    }
+    .drives-panel::before {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(124,92,255,0.14);
+      bottom: -50px;
+      left: -40px;
+      filter: blur(30px);
+      pointer-events: none;
+    }
+    .drives-eyebrow {
+      color: #f96d00;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 1rem;
+    }
+    .drives-title {
+      font-size: 3rem;
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      max-width: 760px;
+      color: #ffffff;
+    }
+    .drives-title .highlight,
+    .drives-title .highlight2 {
+      display: inline-block;
+    }
+    .drives-title .highlight {
+      color: #f96d00;
+    }
+    .drives-title .highlight2 {
+      color: #e23744;
+    }
+    .drives-body {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #c3bec9;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .drives-pill-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+    .drives-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.95rem 1.3rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #ececec;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+    .drives-pill:hover {
+      transform: translateY(-3px);
+      background: rgba(249,109,0,0.13);
+      border-color: rgba(249,109,0,0.28);
+    }
+    @keyframes glowShift {
+      0%, 100% { transform: translateX(0) scale(1); }
+      50% { transform: translateX(10px) scale(1.02); }
+    }
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+    @media (max-width: 991.98px) {
+      .drives-title { font-size: 2.4rem; }
+      .drives-panel { padding: 2.4rem 1.6rem; }
+      .drives-pill-row { grid-template-columns: 1fr; }
+    }
+
+    /* Skills Section Styling */
+    .skills-panel {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      padding: 3.5rem 2.8rem;
+      overflow: hidden;
+      animation: skillsFloat 10s ease-in-out infinite alternate;
+    }
+
+    .skills-panel::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(124,92,255,0.12);
+      top: -80px;
+      right: -60px;
+      filter: blur(40px);
+      pointer-events: none;
+      animation: skillsGlow 6s ease-in-out infinite alternate;
+    }
+
+    .skills-panel::after {
+      content: '';
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(249,109,0,0.1);
+      bottom: -60px;
+      left: -40px;
+      filter: blur(35px);
+      pointer-events: none;
+      animation: skillsGlowAlt 7s ease-in-out infinite alternate;
+    }
+
+    .skills-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .skills-eyebrow {
+      color: #f96d00;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      background: rgba(249,109,0,0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(249,109,0,0.2);
+    }
+
+    .skills-title {
+      font-size: 2.8rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+    }
+
+    .skills-title .highlight {
+      color: #f96d00;
+      position: relative;
+    }
+
+    .skills-title .highlight2 {
+      color: #7C5CFF;
+      position: relative;
+    }
+
+    .skills-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #c3bec9;
+      max-width: 500px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .skill-category {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 320px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124,92,255,0.3);
+      box-shadow: 0 20px 40px rgba(124,92,255,0.15);
+    }
+
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f96d00, #7C5CFF);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .skill-category:hover::before {
+      opacity: 1;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-icon {
+      font-size: 1.5rem;
+      margin-right: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .category-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex: 1;
+      align-content: flex-start;
+    }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ececec;
+      letter-spacing: 0.01em;
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+
+    .skill-chip:hover {
+      transform: translateY(-2px);
+      background: rgba(124,92,255,0.15);
+      border-color: rgba(124,92,255,0.4);
+      color: #ffffff;
+    }
+
+    @keyframes skillsFloat {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(0.5deg); }
+    }
+
+    @keyframes skillsGlow {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    @keyframes skillsGlowAlt {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.05); }
+    }
+
+    @media (max-width: 992px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+      }
+
+      .skill-category {
+        max-width: none;
+        min-height: 180px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .skills-panel {
+        padding: 2.5rem 1.8rem;
+      }
+
+      .skills-title {
+        font-size: 2.2rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        max-width: none;
+        min-height: auto;
+        padding: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="./">Madhumita Moi</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="work/" class="nav-link">Work</a></li>
+           <li class="nav-item"><a href="travel/" class="nav-link">Travel</a></li>
+          <li class="nav-item"><a href="contact/" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/eye.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-end">
+        <div class="col-md-9 ftco-animate pb-5">
+          <h2 class="mb-3 bread">About Me</h2>
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                  class="ion-ios-arrow-forward"></i></a></span> <span>About Me <i
+                class="ion-ios-arrow-forward"></i></span></p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="ftco-section ftco-intro">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-md-4 d-flex">
+          <div class="img" style="background-image: url('images/madhumita.jpeg');"></div>
+        </div>
+        <div class="col-md-8 py-md-5 pt-4 p-md-5">
+          <h2><span>Software Engineer</span></h2>
+
+<p>
+I'm a software engineer focused on building scalable backend systems and
+developer tools. I enjoy solving distributed systems problems and building
+infrastructure that powers real-world products.
+</p>
+
+<!-- <p>
+Currently working on high-scale systems handling large volumes of
+reservations, notifications, and user interactions.
+</p> -->
+          <p>
+            <a href="contact/" class="btn btn-primary mr-2">Contact Me</a>
+            <a href="/images/Madhumita_Moi_Resume_2026.pdf" class="btn btn-outline-dark ml-2" target="_blank" rel="noopener noreferrer">
+              <span class="icon-file-pdf-o mr-1"></span> Resume
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="ftco-section drives-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="skills-panel">
+            <div class="skills-header">
+              <p class="skills-eyebrow">Technical Expertise</p>
+              <h2 class="skills-title">
+                Core <span class="highlight">Stack</span> & <span class="highlight2">Tools</span>
+              </h2>
+              <p class="skills-subtitle">
+                Technologies and platforms that power my development journey
+              </p>
+            </div>
+
+            <div class="skills-grid">
+              <div class="skill-category">
+                <div class="category-header">
+                  <div class="category-icon">⚡</div>
+                  <h3 class="category-title">Core Stack</h3>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-chip">Golang</span>
+                  <span class="skill-chip">Java</span>
+                  <span class="skill-chip">C++</span>
+                  <span class="skill-chip">ReactJS</span>
+                  <span class="skill-chip">NodeJS</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <div class="category-header">
+                  <div class="category-icon">🛠️</div>
+                  <h3 class="category-title">Tools & Platforms</h3>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-chip">AWS DynamoDB</span>
+                  <span class="skill-chip">Elasticsearch</span>
+                  <span class="skill-chip">Git</span>
+                  <span class="skill-chip">GitHub</span>
+                  <span class="skill-chip">Postman</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <div class="category-header">
+                  <div class="category-icon">📚</div>
+                  <h3 class="category-title">Foundations</h3>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-chip">System Design</span>
+                  <span class="skill-chip">OOP</span>
+                  <span class="skill-chip">Operating Systems</span>
+                  <span class="skill-chip">DBMS</span>
+                  <span class="skill-chip">Data Structures</span>
+                  <span class="skill-chip">Algorithms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-portfolio">
+    <div style="max-width:1100px;margin:auto;text-align:center;">
+
+    <p style="color:#e23744;font-weight:600;letter-spacing:2px;font-size:14px;margin-bottom:10px;">
+      JOURNEY
+    </p>
+
+    <h2 style="font-size:42px;font-weight:700;margin-bottom:15px;">
+      Experience and Education
+    </h2>
+
+    <p style="color:#666;font-size:16px;max-width:600px;margin:auto;">
+      A timeline of my academic background and professional experience.
+    </p>
+
+  </div>
+
+    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <nav id="navi">
+              <ul>
+                <li><a href="#page-1">Experience</a></li>
+                <li><a href="#page-2">Education</a></li>
+                <li><a href="#page-3">Achievements</a></li>
+                <li><a href="#page-4">Position of Responsibility</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-9">
+
+            <div id="page-1" class="page two">
+              <h2 class="heading">Experience</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/portfolio.png" width="30" />
+                </div>
+                <div class="text pl-3">
+                  <span class="date">June 2024 – Present</span>
+                  <h2>Software Engineer</h2>
+                  <span class="position">DREAM11</span>
+                  <ul>
+                    <li>Currently building backend systems for a new RMG platform in partnership with third-party government services, including the Winners management service.</li>
+                    <li>Developed and maintained Payments and KYC services for Cricbuzz11, ensuring secure and reliable financial transactions.</li>
+                    <li>Contributed to the Experimentation and Audience Engine platform, enabling improved user targeting and data-driven product decisions.</li>
+                    <li>Designed and built scalable backend APIs, enhancing system performance, reliability, and maintainability.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/portfolio.png" width="30" />
+                </div>
+                <div class="text pl-3">
+                  <span class="date">June 2024 - Feb 2025</span>
+                  <h2>Software Development Engineer</h2>
+                  <span class="position">ZOMATO</span>
+                  <ul>
+                    <li>Built a real-time high-volume notification system in Golang for Zomato and District, processing
+                      70K+ daily updates to ensure seamless communication between users and restaurant partners.</li>
+                    <li>Developed the end-to-end Table Reservation flow for District (7.5M+ downloads), handling 162.5K+
+                      peak reservations with low latency and high availability.</li>
+                    <li>Created internal dashboards and self-serve tools using React.js (Feature Store, Benefits, Table
+                      Reservation, and Experiences), streamlining workflows for 200+ analysts and reducing developer
+                      dependency.</li>
+                    <li>Implemented the Set Menu concept for targeted dining discounts, generating 10K+ daily
+                      impressions and adopted by 200+ restaurants during the Zomato/District Dining Carnival.</li>
+                    <li>Optimized backend systems for performance and scalability by building scalable Golang APIs,
+                      migrating internal functionality to external gRPC servers, and implementing fault-tolerant
+                      patterns across AWS services.</li>
+                    <li>Integrated user interaction tracking systems to log impressions and improve analytics, enabling
+                      data-driven decision-making for product and business teams.</li>
+
+                    <li>Tech Stacks: Golang, ReactJS, AWS</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/portfolio.png" width="30" />
+                </div>
+                <div class="text pl-3"> 
+                  <span class="date">December 2023 - May 2024</span>
+                  <h2>Software Development Engineering Intern</h2>
+                  <span class="position">VIRGIO</span>
+                  <ul>
+                    <li>Developed the entire front-end flow for a custom returns and exchange feature using React(Remix)
+                      and Tailwind CSS, replacing a third-party app. This enhanced UI/UX and logistics flexibility,
+                      resulting in a 30% increase in customer satisfaction.</li>
+                    <li>Migrated and optimized the website to Hydrogen (React Remix framework) from Shopify, improving
+                      performance scores from 60% to 95%, and enhancing key features contributing to a 45% faster page
+                      load time.</li>
+                    <li> Enhanced Size Chart interaction, developed the high-design Circularity page and size chart,
+                      reducing size-relat
+                    </li>
+                    <li>Tech Stacks: ReactJS</li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/portfolio.png" width="30" />
+                </div>
+                <div class="text pl-3">
+                  <span class="date">May 2023 - July 2023</span>
+                  <h2>Software Development Engineering Intern</h2>
+                  <span class="position">XIMKART</span>
+                  <ul>
+                    <li>Developed a PDF-to-image conversion feature in Java, enhancing file preview functionality.</li>
+                    <li>Implemented WhatsApp integration for enhanced client notifications, improving communication and
+                      client experience.</li>
+                    <li>Implementing a search engine using Elasticsearch for product search, aiming to enhance user
+                      experience and satisfaction.
+                    </li>
+                    <li>Tech Stacks: JAVA, Elasticsearch</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/portfolio.png" width="30" />
+                </div>
+                <div class="text pl-3">
+                  <span class="date">March 2021 - May 2021</span>
+                  <h2>Open-Source Contributer</h2>
+                  <span class="position">GirlScript Summer of Code</span>
+                  <ul>
+                    <li>Experienced in solving coding problems on the NeoAlgo platform.</li>
+                    <li>Proficient in implementing algorithms and applying logical thinking to solve complex problems
+                      using C/C++</li>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="page-2" class="page one">
+              <h2 class="heading">Education</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/graduation-hat.png" width="30" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">2020-2024</span>
+                  <h2>Bachelor of Technology in Electronics and Communication Engineering</h2>
+                  <span class="position">National Institute of Technology Agartala</span>
+                  <p>Final year student with CGPA 8.32</p>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/graduation-hat.png" width="30" />
+                </div>
+                <div class="text pl-3">
+                  <span class="date">2018 - 2020</span>
+                  <h2>Senior Secondary</h2>
+                  <span class="position">DAV Model School, Durgapur</span>
+                  <p>CBSE score: 91.2 (in percent)
+                  </p>
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+            <div id="page-3" class="page three">
+              <h2 class="heading">Achievements</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/award.png" width="40" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">July 2023</span>
+                  <h2>First Runner-Up</h2>
+                  <span class="position">Google Girl Hackathon 2023</span>
+                  <p>Outshining 26,000+ participants, I achieved the remarkable distinction of First Runner up, placing
+                    in the top
+                    0.002%.
+                    This prestigious tech competition recognized my innovative solutions and exceptional problem-solving
+                    skills.</p>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/award.png" width="40" />
+                </div>
+                <div class="text pl-3">
+                  <span class="date">Hackathon</span>
+                  <h2>Finalist</h2>
+                  <span class="position">Jumpstart by Publicis Sapient</span>
+                  <p>Outshining a competitive pool of 29,000+ participants, I emerged as a top performer and
+                    successfully cleared
+                    Round 1 and
+                    2, earning the opportunity to advance to Jumpstart—an exclusive event where the most exceptional and
+                    diverse
+                    engineering
+                    talent from across the country converge. Jumpstart offers a privileged glimpse into the forefront of
+                    engineering
+                    and
+                    technology, allowing qualifiers to interact with renowned tech leaders and experts who have made
+                    significant
+                    impacts in
+                    the business world over the years.
+                  </p>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/award.png" width="40" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">May 2022</span>
+                  <h2>Ranked in the Top 6%</h2>
+                  <span class="position">Outreachy Program</span>
+                  <p>Distinguished as one of the top performers, I attained a remarkable position in the top 6% among an
+                    impressive
+                    pool of
+                    5,000+ applicants for the prestigious Outreachy Program. This highly competitive program celebrates
+                    open-source
+                    contributions, and my exceptional skills and dedication were recognized during the rigorous
+                    selection process. I
+                    feel
+                    privileged to have earned this distinction, and I am eager to leverage this opportunity to make
+                    meaningful
+                    contributions
+                    to the open-source community.</p>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/award.png" width="40" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">CodeChef Contest</span>
+                  <h2>Global Rank 6</h2>
+                  <span class="position">Codechef Starters - 93 (div 3) - Global Rank 6</span>
+                  <p>Proudly securing an exceptional Global Rank 6 in the esteemed Codechef Starters - 93 (div 3)
+                    competition, I
+                    demonstrated
+                    outstanding coding proficiency and problem-solving skills among 4000+ participants. This remarkable
+                    achievement
+                    places
+                    me in the top 0.16%, underscoring my dedication to excellence in competitive coding. The Codechef
+                    Starters
+                    series has
+                    been a challenging and rewarding platform, and I am grateful for the opportunity to showcase my
+                    abilities at a
+                    global
+                    level. I look forward to continuing my pursuit of coding excellence and contributing to the coding
+                    community.
+                  </p>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/award.png" width="40" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">January 2021</span>
+                  <h2>Winner</h2>
+                  <span class="position">HACKBIZ'20 NIT Agartala</span>
+                  <p>Guiding my team to a resounding victory, we emerged as the champions in the fiercely competitive
+                    Case Study
+                    Challenge at
+                    HACKBIZ'20. Outshining over 75 competing teams, our collective effort, innovative strategies, and
+                    meticulous
+                    analysis
+                    earned us this prestigious recognition. The experience of collaborating, strategizing, and
+                    problem-solving
+                    during the
+                    challenge was immensely rewarding, and I am grateful for the opportunity to showcase leadership and
+                    teamwork
+                    skills in
+                    this dynamic setting.</p>
+                </div>
+              </div>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/award.png" width="40" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">July 2021</span>
+                  <h2>Second Runner-Up</h2>
+                  <span class="position">Local Before Global - NIT Agartala</span>
+                  <p>As the 2nd runner-up in the highly competitive Start-up Challenge, Local Before Global, I proudly
+                    represented
+                    my team
+                    among 45+ participating teams. This achievement showcases our dedication, innovation, and
+                    entrepreneurial spirit
+                    in
+                    devising a compelling business plan. The experience of navigating the start-up landscape and
+                    pitching our ideas
+                    has been
+                    both empowering and enlightening.</p>
+                </div>
+              </div>
+
+            </div>
+            <div id="page-4" class="page four">
+              <h2 class="heading">Position of Responsibility</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/leader.png" width="30" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">August 2021 - ongoing</span>
+                  <h2>Head of External Affairs</h2>
+                  <span class="position">Entrepreneurship Cell NIT-Agartala</span>
+                  <p>Organized and managed external relations and partnerships for the Entrepreneurship Cell, fostering
+                    connections with
+                    entrepreneurs, industry professionals, and other organizations.</p>
+                </div>
+              </div>
+
+              <div class="resume-wrap d-flex ftco-animate">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <img src="images/leader.png" width="30" />
+
+                </div>
+                <div class="text pl-3">
+                  <span class="date">August 2021-September 2022</span>
+                  <h2>Technical Writing &amp; LinkedIn Team Lead</h2>
+                  <span class="position">Literary Club NIT-Agartala</span>
+                  <p>Authored Technical articles and provided Mentorship to students.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </section>
+
+  <div id="vanta-bg" style="height:100vh; width:100vw; position: absolute"></div>
+
+  <section class="ftco-section ftco-intro" style="margin:0">
+
+    <div class="container">
+    </div>
+  </section>
+
+
+   
+		<div id="site-footer"></div>
+
+<!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+          stroke="#F96D00" />
+      </svg></div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script> -->
+    <script src="js/main.js"></script>
+		<script src="js/footer.js"></script>
+
+</body>
+
+</html>
