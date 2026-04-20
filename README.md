@@ -12,6 +12,6 @@ Welcome to my personal portfolio website! This website showcases my projects, sk
 
 Feel free to reach out to me with any questions or feedback:
 
-- **Email:** madhumoi0266@gmail.com
+- **Email:** madhumitamoi.nita@gmail.com
 - **LinkedIn:** [Madhumita Moi](https://www.linkedin.com/in/madhumita-moi/)
 - **Twitter:** [@Madhumita_Moi](https://twitter.com/Madhumita_Moi)
