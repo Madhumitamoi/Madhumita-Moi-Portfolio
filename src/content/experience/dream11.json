@@ -1,0 +1,17 @@
+{
+  "company": "Dream11",
+  "role": "Software Engineer",
+  "order": 2,
+  "startDate": "May 2025",
+  "endDate": "Jun 2026",
+  "location": "Mumbai",
+  "summary": "Building backend systems across real-money gaming, payments, KYC, experimentation and audience platforms.",
+  "technologies": ["Go", "Backend", "APIs", "Systems"],
+  "selectedWork": [
+    "Backend services for a new RMG platform working with third-party government services.",
+    "Payments and KYC services for Cricbuzz11.",
+    "Experimentation and Audience Engine capabilities for targeting and product decisions.",
+    "Scalable APIs focused on performance, reliability and maintainability."
+  ],
+  "metrics": []
+}

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const photographs = [
+  { src: '/images/travel/dharamshala-mountain.jpg', place: 'Dharamshala', alt: 'A quiet café overlooking the mountains in Dharamshala' },
+  { src: '/images/travel/switzerland-lake.jpg', place: 'Switzerland', alt: 'A quiet dock extending into a Swiss lake' },
+  { src: '/images/travel/lauterbrunnen-falls.jpg', place: 'Lauterbrunnen, Switzerland', alt: 'Madhumita in front of Staubbach Falls in Lauterbrunnen' },
+  { src: '/images/travel/rome-evening.jpg', place: 'Rome', alt: 'An evening street scene in Rome' },
+  { src: '/images/travel/thailand-longtail.jpg', place: 'Thailand', alt: 'A traditional long-tail boat in Thailand' },
+  { src: '/images/travel/amalfi-blue-bay.jpg', place: 'Amalfi Coast', alt: 'The blue bay and coastline of Amalfi' },
+  { src: '/images/travel/manali-mist.jpg', place: 'Manali', alt: 'Morning mist across the mountains in Manali' },
+  { src: '/images/travel/varkala-cliff.jpg', place: 'Varkala', alt: 'A view from the cliffs of Varkala' },
+  { src: '/images/travel/varkala-self.jpg', place: 'Varkala', alt: 'Madhumita travelling in Varkala' },
+];
+---
+<BaseLayout title="Travel photographs — Madhumita Moi" description="A small collection of travel photographs by Madhumita Moi.">
+  <header class="travel-header">
+    <p class="eyebrow">Outside work / Travel</p>
+    <h1>Places, streets<br />and small moments.</h1>
+    <p>A quiet visual archive from places I’ve travelled. Kept here as photographs—not itineraries.</p>
+  </header>
+
+  <section class="travel-grid" aria-label="Travel photographs">
+    {photographs.map((photo, index) => (
+      <figure>
+        <div class="travel-image-frame">
+          <img src={photo.src} alt={photo.alt} width="1000" height="1250" loading={index < 4 ? 'eager' : 'lazy'} decoding="async" fetchpriority={index === 0 ? 'high' : 'auto'} />
+        </div>
+        <figcaption><span>{String(index + 1).padStart(2, '0')}</span>{photo.place}</figcaption>
+      </figure>
+    ))}
+  </section>
+</BaseLayout>

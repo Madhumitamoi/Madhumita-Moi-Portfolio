@@ -1,0 +1,16 @@
+{
+  "company": "Ximkart",
+  "role": "Software Engineering Intern",
+  "order": 5,
+  "startDate": "May 2023",
+  "endDate": "Jul 2023",
+  "location": "Remote",
+  "summary": "Built practical product infrastructure across previews, search and customer notifications.",
+  "technologies": ["Java", "Elasticsearch", "WhatsApp API"],
+  "selectedWork": [
+    "PDF-to-image conversion for document previews.",
+    "WhatsApp-based client notifications.",
+    "Elasticsearch-backed product search."
+  ],
+  "metrics": []
+}

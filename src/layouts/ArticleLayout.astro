@@ -1,0 +1,12 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { title, description, eyebrow, date, readTime } = Astro.props;
+---
+<BaseLayout title={`${title} — Madhumita Moi`} description={description}>
+  <header class="article-header">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    {(date || readTime) && <p class="article-meta">{date}{date && readTime ? ' · ' : ''}{readTime}</p>}
+  </header>
+  <article class="prose"><slot /></article>
+</BaseLayout>

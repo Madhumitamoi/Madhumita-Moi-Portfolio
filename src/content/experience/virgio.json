@@ -1,0 +1,16 @@
+{
+  "company": "Virgio",
+  "role": "Software Engineering Intern",
+  "order": 4,
+  "startDate": "Dec 2023",
+  "endDate": "May 2024",
+  "location": "Bengaluru",
+  "summary": "Worked across customer-facing commerce flows, performance and front-end systems.",
+  "technologies": ["React", "Remix", "Tailwind", "Shopify"],
+  "selectedWork": [
+    "Built custom returns and exchange flows to replace a third-party application.",
+    "Migrated the storefront to Hydrogen and improved performance and page-load speed.",
+    "Improved high-intent shopping interactions including sizing and circularity experiences."
+  ],
+  "metrics": []
+}

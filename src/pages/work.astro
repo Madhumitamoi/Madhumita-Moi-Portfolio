@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const experience = (await getCollection('experience')).sort((a,b) => a.data.order - b.data.order);
+const education = [
+  { years: '2020—2024', qualification: 'B.Tech, Electronics & Communication Engineering', institution: 'National Institute of Technology Agartala' },
+  { years: '2018—2020', qualification: 'Senior Secondary · CBSE', institution: 'DAV Model School, Durgapur' },
+  { years: '2007—2018', qualification: 'ICSE', institution: "St. Peter’s School, Durgapur" },
+];
+const achievements = [
+  { year: '2023', result: 'First runner-up', event: 'Google Girl Hackathon', detail: 'Selected from 26,000+ participants.' },
+  { year: '2021', result: 'Second runner-up', event: 'Local Before Global · NIT Agartala', detail: 'Startup challenge with 45+ participating teams.' },
+  { year: '2021', result: 'Winner', event: "HACKBIZ’20 · NIT Agartala", detail: 'Won the case-study challenge among 75+ teams.' },
+];
+---
+<BaseLayout title="Work — Madhumita Moi" description="Madhumita Moi's experience building backend systems across consumer technology and startups.">
+  <header class="page-intro split-intro"><h1>Work</h1><p>I’ve spent the last few years building software across consumer technology and startups.<br /><br />Mostly backend.<br />Sometimes product.<br />Always curious.</p></header>
+  <section class="timeline">
+    {experience.map((item, index) => <article class="experience-item">
+      <span class="timeline-number">{String(index + 1).padStart(2,'0')}</span>
+      <div class="timeline-marker" aria-hidden="true"></div>
+      <div class="experience-title"><h2>{item.data.company}</h2><strong>{item.data.role}</strong><p>{item.data.startDate} – {item.data.endDate}{item.data.location && ` · ${item.data.location}`}</p><p class="summary">{item.data.summary}</p></div>
+      {item.data.selectedWork.length > 0 && <div class="selected-work"><p class="label">Selected work</p><ul>{item.data.selectedWork.map(work => <li>{work}</li>)}</ul></div>}
+      {item.data.metrics.length > 0 && <div class="metrics">{item.data.metrics.map(metric => <div><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>}
+    </article>)}
+  </section>
+
+  <section class="work-secondary education-section">
+    <header><p class="eyebrow">Background</p><h2>Education</h2></header>
+    <div class="education-list">
+      {education.map(item => <article>
+        <span>{item.years}</span>
+        <div><h3>{item.institution}</h3><p>{item.qualification}</p></div>
+      </article>)}
+    </div>
+  </section>
+
+  <section class="work-secondary achievements-section">
+    <header><p class="eyebrow">A few milestones</p><h2>Achievements</h2></header>
+    <div class="achievement-list">
+      {achievements.map((item, index) => <article>
+        <span class="row-index">{String(index + 1).padStart(2, '0')}</span>
+        <span class="achievement-year">{item.year}</span>
+        <div><h3>{item.result}</h3><p>{item.event}</p></div>
+        <p>{item.detail}</p>
+      </article>)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,12 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+export async function getStaticPaths() { return (await getCollection('notes')).filter(n => !n.data.draft).map(note => ({ params: { slug: note.id }, props: { note } })); }
+const { note } = Astro.props;
+const { Content } = await render(note);
+const date = note.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<ArticleLayout title={note.data.title} description={note.data.description} eyebrow={note.data.category} date={date} readTime={note.data.readTime}>
+  <Content />
+  <footer class="article-end"><p>Thanks for reading.</p><a href="/notes/">← More notes</a></footer>
+</ArticleLayout>

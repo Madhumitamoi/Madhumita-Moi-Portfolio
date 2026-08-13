@@ -1,0 +1,16 @@
+---
+const { project, compact = false } = Astro.props;
+const number = String(project.data.order).padStart(2, '0');
+---
+<article class:list={['project-row', { compact }]}>
+  <span class="row-index">{number}</span>
+  <div class="row-main">
+    <h3><a href={`/projects/${project.id}/`}>{project.data.title}</a></h3>
+    <p>{project.data.summary}</p>
+    <span class="project-status">{project.data.status}</span>
+    <ul class="tag-list" aria-label="Technologies">
+      {project.data.tags.map((tag: string) => <li>{tag}</li>)}
+    </ul>
+  </div>
+  <a class="row-arrow" href={`/projects/${project.id}/`} aria-label={`View ${project.data.title}`}>↗</a>
+</article>

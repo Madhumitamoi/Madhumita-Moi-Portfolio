@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import NoteRow from '../components/NoteRow.astro';
+
+const projects = (await getCollection('projects')).filter(p => p.data.featured).sort((a,b) => a.data.order - b.data.order).slice(0,3);
+const notes = (await getCollection('notes')).filter(n => !n.data.draft).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0,3);
+const experience = (await getCollection('experience')).sort((a,b) => a.data.order - b.data.order);
+const [about] = await getCollection('about');
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Hi, I’m<br /><em>Madhumita.</em></h1>
+      <p class="hero-deck">Software engineer building<br />systems, products and<br />useful things<br />on the internet.</p>
+      <p class="microcopy">Based in 📍 Mumbai, India.<br />Originally from Durgapur, West Bengal.<br />Baked roshogolla and fuchka are basically my source code.</p>
+    </div>
+    <figure class="portrait-wrap">
+      <div class="tape" aria-hidden="true"></div>
+      <img src="/images/portrait.jpg" width="900" height="1200" alt="Madhumita Moi smiling" fetchpriority="high" />
+    </figure>
+  </section>
+
+  <section class="section-block">
+    <div class="section-heading"><h2>Currently building</h2><a href="/projects/">See everything →</a></div>
+    <div class="project-grid">{projects.map(project => <ProjectRow project={project} compact />)}</div>
+  </section>
+
+  <div class="home-columns">
+    <section class="section-block">
+      <div class="section-heading"><h2>Experience</h2><a href="/work/">View all work →</a></div>
+      <div class="experience-mini">
+        {experience.slice(0,3).map(item => <article><span>{item.data.startDate.slice(-4)}—{item.data.endDate === 'Present' ? 'now' : item.data.endDate.slice(-2)}</span><h3>{item.data.company}</h3><p>{item.data.role}</p></article>)}
+      </div>
+    </section>
+    <section class="section-block">
+      <div class="section-heading"><h2>Notes</h2><a href="/notes/">Visit notes →</a></div>
+      {notes.length > 0 ? notes.map(note => <NoteRow note={note} />) : <div class="notes-home-empty"><p>Small observations from things I’m building and learning.</p><span>I’ll add to this slowly.</span></div>}
+    </section>
+  </div>
+
+  <section class="home-about" id="about">
+    <p class="eyebrow">About</p>
+    <h2>{about.data.intro}</h2>
+    <div class="home-about-columns">
+      <div class="home-about-outside"><p>{about.data.outsideWork}</p><a href="/travel/">See some of my travel photographs →</a></div>
+    </div>
+  </section>
+
+</BaseLayout>

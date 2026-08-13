@@ -1,0 +1,20 @@
+{
+  "company": "Zomato",
+  "role": "Software Development Engineer",
+  "order": 3,
+  "startDate": "Jun 2024",
+  "endDate": "Feb 2025",
+  "location": "Gurgaon",
+  "summary": "Built reservation, notification and internal platform systems for Zomato and District Dining.",
+  "technologies": ["Go", "gRPC", "AWS", "React"],
+  "selectedWork": [
+    "End-to-end table reservation flow built for low latency and high availability.",
+    "Real-time notification system processing more than 70,000 daily updates.",
+    "Self-serve tools for more than 200 analysts across feature, benefits and reservation workflows.",
+    "Fault-tolerant APIs and service migrations across AWS and gRPC."
+  ],
+  "metrics": [
+    { "value": "7.5M+", "label": "District downloads" },
+    { "value": "162.5K+", "label": "peak reservations" }
+  ]
+}

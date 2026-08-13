@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: Madhumitamoi/Madhumita-Moi-Portfolio
+  branch: master
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+publish_mode: editorial_workflow
+
+collections:
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Order, name: order, widget: number, value_type: int }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Year, name: year, widget: string }
+      - { label: Status, name: status, widget: string, default: In progress }
+      - { label: Tags, name: tags, widget: list }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Company, name: company, widget: string, required: false }
+      - { label: Outcome, name: outcome, widget: string, required: false }
+      - { label: GitHub, name: github, widget: string, required: false }
+      - { label: Demo, name: demo, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - name: notes
+    label: Notes
+    folder: src/content/notes
+    create: true
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Category, name: category, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Read time, name: readTime, widget: string }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: true }
+      - { label: Body, name: body, widget: markdown }
+  - name: experience
+    label: Experience
+    folder: src/content/experience
+    create: true
+    extension: json
+    format: json
+    fields:
+      - { label: Company, name: company, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Order, name: order, widget: number, value_type: int }
+      - { label: Start date, name: startDate, widget: string }
+      - { label: End date, name: endDate, widget: string }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Technologies, name: technologies, widget: list }
+      - { label: Selected work, name: selectedWork, widget: list }
+      - label: Metrics
+        name: metrics
+        widget: list
+        required: false
+        fields:
+          - { label: Value, name: value, widget: string }
+          - { label: Label, name: label, widget: string }
+  - name: about
+    label: About
+    files:
+      - label: About page
+        name: main
+        file: src/content/about/main.json
+        fields:
+          - { label: Intro, name: intro, widget: text }
+          - { label: Story, name: story, widget: list }
+          - { label: Values, name: values, widget: list }
+          - { label: Outside work, name: outsideWork, widget: text }

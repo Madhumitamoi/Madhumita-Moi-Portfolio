@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoteRow from '../../components/NoteRow.astro';
+const notes = (await getCollection('notes')).filter(n => !n.data.draft).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const categories = [...new Set(notes.map(n => n.data.category))];
+---
+<BaseLayout title="Notes — Madhumita Moi" description="Notes on engineering, AI, product and building useful things.">
+  <header class="page-intro split-intro"><h1>Notes</h1><p>Small observations from things<br />I’m building, learning and<br />trying to understand.</p></header>
+  {notes.length > 0 ? <>
+    <div class="filters" aria-label="Note categories"><span class="active">All</span>{categories.map(tag => <span>{tag}</span>)}</div>
+    <section class="notes-list">{notes.map(note => <NoteRow note={note} />)}</section>
+  </> : <section class="notes-empty"><p>Nothing here yet.</p><p>I’ll add to this slowly.</p></section>}
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+const { pathname = '/' } = Astro.props;
+const links = [
+  ['/work/', 'Work'],
+  ['/projects/', 'Building'],
+  ['/notes/', 'Notes'],
+  ['/travel/', 'Travel'],
+  ['/contact/', 'Contact'],
+];
+---
+<header class="site-header">
+  <a class="wordmark" href="/">Madhumita Moi</a>
+  <nav aria-label="Primary navigation">
+    {links.map(([href, label]) => (
+      <a href={href} aria-current={pathname.startsWith(href) ? 'page' : undefined}>{label}</a>
+    ))}
+  </nav>
+</header>

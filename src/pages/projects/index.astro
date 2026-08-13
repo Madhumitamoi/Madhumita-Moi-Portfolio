@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectRow from '../../components/ProjectRow.astro';
+const projects = (await getCollection('projects')).sort((a,b) => a.data.order - b.data.order);
+const categories = [...new Set(projects.flatMap(p => p.data.tags))].slice(0,5);
+---
+<BaseLayout title="Building — Madhumita Moi" description="Things Madhumita Moi is currently building and learning from.">
+  <header class="page-intro split-intro"><h1>Things I’m<br />Building</h1><p>Ideas I’m working through,<br />products taking shape,<br />and what I’m learning.</p></header>
+  <div class="filters" aria-label="Project categories"><span class="active">All</span>{categories.map(tag => <span>{tag}</span>)}</div>
+  <section class="project-list">{projects.map(project => <ProjectRow project={project} />)}</section>
+</BaseLayout>
