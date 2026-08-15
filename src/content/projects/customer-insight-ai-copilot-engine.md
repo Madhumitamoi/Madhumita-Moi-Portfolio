@@ -1,58 +1,78 @@
 ---
-title: Customer Insight AI Copilot Engine
+title: AI Product Manager Copilot
 order: 1
-summary: An experiment in turning scattered customer feedback into themes, evidence and clearer product decisions.
+summary: A prototype for turning scattered customer feedback into evidence-backed themes, priorities and editable product briefs.
 year: "2026"
-status: In progress
-tags: [AI, Backend, Product]
+status: Technical prototype
+tags: [AI, Product, Backend]
 featured: true
+github: https://github.com/Madhumitamoi/AI-PM-Copilot
+outcome: The architecture exists; I’m now working toward one trustworthy end-to-end workflow.
 ---
 
-## What I’m building
+## The problem I’m exploring
 
-Customer feedback rarely arrives in one tidy place. It is spread across reviews, support conversations, surveys and direct messages. The useful signal is often buried under repetition and noise.
+Product managers rarely receive customer feedback in one tidy place. It arrives through support tickets, interviews, surveys, reviews, community conversations and email. Before it can inform a roadmap, someone has to collect it, remove repetition, find recurring problems and explain why a decision is worth making.
 
-I’m exploring a system that brings that feedback together, identifies recurring themes and helps a product team decide what deserves a closer look. The goal is not to let an AI make the decision. It is to reduce the manual sorting required before a person can make one.
+That work is slow, difficult to audit and easy to separate from the original customer evidence.
 
-## The basic flow
+AI Product Manager Copilot explores a more useful workflow: bring the feedback together, surface possible themes, let a product manager verify the evidence and turn an approved opportunity into an editable first-draft PRD.
 
-<div class="architecture" aria-label="Customer insight processing flow">
-  <span>Feedback</span><b>→</b><span>Normalize</span><b>→</b><span>Detect themes</span><b>→</b><span>Review insights</span>
+## The workflow
+
+<div class="architecture" aria-label="AI Product Manager Copilot workflow">
+  <span>Collect feedback</span><b>→</b><span>Review themes</span><b>→</b><span>Prioritize</span><b>→</b><span>Draft a PRD</span>
 </div>
 
-The proposed pipeline stores normalized feedback in PostgreSQL, uses an OpenAI-compatible model for theme extraction, and uses embeddings with pgvector to find semantically related comments. A web dashboard presents themes together with the original feedback that supports them.
+The AI is not meant to own the roadmap. Its job is to reduce repetitive synthesis while keeping the decision—and the ability to question the output—with the product manager.
 
-## MVP scope
+## What exists today
 
-- Import a small set of customer-feedback sources.
-- Group related feedback into understandable themes.
-- Search for semantically similar comments.
-- Keep every generated theme traceable to its source feedback.
-- Let a person correct, merge or reject generated themes.
-- Turn an accepted theme into a lightweight product recommendation.
+The repository is a technical prototype, not a finished product. It currently demonstrates:
 
-The wider PRD also explores metric mapping and automatic PRD generation. Those are useful directions, but they come after the core feedback analysis can be evaluated reliably.
+- A basic dashboard and API structure.
+- Manual feedback submission and storage.
+- Batch theme extraction with a fallback when the model is unavailable.
+- Experimental semantic search.
+- Early metric-mapping and PRD-template output.
+- A local development setup with automated tests.
 
-## Architecture direction
+These pieces prove parts of the architecture, but the complete feedback-to-PRD journey does not yet work through the interface.
 
-The current technical direction uses a React and Next.js interface, a REST API layer, PostgreSQL with pgvector, an OpenAI-compatible model, and Docker for a reproducible local setup.
+## What the MVP needs to become
 
-Keeping ingestion, theme detection, search and recommendations separate makes it possible to change one part of the pipeline without rebuilding the entire product.
+The first useful version is deliberately one complete workflow rather than a long list of integrations:
+
+- Add feedback manually, through a CSV, or from one authenticated source.
+- Review themes together with counts, excerpts and the feedback behind them.
+- Rename, merge, split, dismiss or approve an AI-generated theme.
+- Compare opportunities using visible inputs and adjustable weights.
+- Generate an evidence-backed PRD from an approved opportunity.
+- Edit, save, version and export that draft as Markdown.
+
+A first-time user should be able to complete this journey with a sample dataset without reading API documentation or touching the database.
+
+## The principles behind it
+
+- **Evidence before recommendation.** Every theme and product brief should lead back to supporting feedback.
+- **Human review is required.** AI output should be editable, rejectable and never treated as a decision by default.
+- **Explain the score.** Priorities should show their inputs, assumptions and rationale.
+- **Do not invent business impact.** Revenue, churn or conversion effects need real customer data or a clear assumptions label.
+- **Privacy belongs in the product.** Sensitive information should be minimized before feedback reaches an external model.
+- **Finish the core loop first.** More connectors are not useful if the central workflow cannot be trusted.
 
 ## The difficult part
 
-Generating a plausible theme is easy. Generating one that a product manager can trust is harder.
+Generating a plausible theme is easy. Generating one that a product manager can defend is harder.
 
-Similar comments may describe different problems, and different language may point to the same underlying issue. Model output can also lose context or sound more certain than the evidence allows. That makes traceability and human review part of the product rather than an optional safety layer.
+Different language can describe the same problem, while similar comments can point to entirely different causes. A neat-looking score can also create false confidence when its inputs are arbitrary. That is why evidence links, transparent scoring and human correction are part of the product rather than optional safeguards.
 
-Customer feedback can contain names, account details and other sensitive information. Before this becomes more than a local experiment, it needs explicit data-retention rules, redaction, deletion controls and clear tenant boundaries.
+The earlier product document included ambitious claims about time savings, prioritization accuracy and business impact. Those have now been removed or relabelled as hypotheses. None of them should be presented as outcomes until they are measured with real users.
 
-## What I’m working through next
+## Where I’m taking it next
 
-- Building a small labelled dataset to evaluate theme quality.
-- Defining when the system should return “not enough evidence.”
-- Adding feedback correction and confidence signals.
-- Testing privacy-safe ingestion and deletion flows.
-- Deciding which integrations are genuinely useful for the first version.
+The immediate milestone is to restore engineering truth: reliable builds, honest documentation, complete feedback listing and tests that do not silently skip required integrations.
 
-This project is still evolving. The interesting work is not making the model generate more text—it is making the output easier to question, verify and use.
+After that, I want to build the first usable vertical slice—feedback import, persisted themes and evidence, human review, transparent opportunity scoring and an editable PRD—then test it with a small group of product managers.
+
+The question is not whether a model can generate more text. It is whether the product can help someone make a faster decision without losing the evidence or overstating what the system knows.
