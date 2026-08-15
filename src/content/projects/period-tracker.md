@@ -1,48 +1,66 @@
 ---
-title: Period Tracker
+title: Body, in Context
 order: 2
-summary: A personal project for women trying to understand their cycles, routines and bodies without being overwhelmed.
+summary: A private health journal for noticing how cycles, symptoms, sleep, stress, energy and movement fit together.
 year: "2026"
-status: In progress
-tags: [Wellbeing, Personal, Product]
+status: Live MVP
+tags: [Health, Wellbeing, Product]
 featured: true
+demo: https://body-in-context.vercel.app/
+outcome: A working personal MVP that I’m now using and learning from.
 ---
 
-## Why I started this
+## The idea
 
-I’ve lived with PCOD since I was young. For years, the usual response was medication, but I still didn’t feel like I understood what was happening in my body. I gained weight, saw little improvement and was left without much clarity about what to do next.
+Body, in Context helps a woman understand how her cycle, symptoms, sleep, stress, energy and movement fit together—using her own patterns, not generic advice.
 
-College brought sleepless nights and inconsistent food. Later, working full-time added stressful days and late evenings. I tried to improve things by working out and eating more protein, but without the right guidance I struggled to make progress. At times, I felt more inflamed and began dealing with skin issues too.
+It began as a period-tracking idea, but that framing felt too narrow. A period is one signal. The more useful story is everything happening around it.
 
-After speaking with doctors and doing a lot of reading on my own, I began to understand that generic advice from social media wasn’t going to tell me what my body needed. I had to pay attention to my own patterns: sleep, stress, movement, food and how I felt over time.
+## Why I’m building it
 
-Things slowly started getting better—not because I found one perfect fix, but because I became more consistent and more aware of what worked for me.
+I’ve lived with PCOD for years. Medication was the first answer I was given, but it did not help me understand what was happening in my body or what I could do beyond taking a pill.
 
-## What I wish existed
+College brought sleepless nights, irregular routines and convenient food. Full-time work changed the setting, but not the pattern: long hours, late calls, inconsistent meals and very little attention to recovery.
 
-I wanted a simple place to record what was happening without feeling judged, overwhelmed or pushed towards another generic routine.
+Later, I began working out, eating more protein and following the fitness advice I saw everywhere. I thought I was doing the right things, yet my body did not respond the way I expected. I was putting more effort into being healthy while dealing with inflammation and skin issues.
 
-Something that could help me connect my cycle with the realities around it: poor sleep, stressful weeks, changes in food, movement and the small habits that are easy to forget when life gets busy.
+That made me stop following advice blindly and start paying attention to my own body. Sleep, stress, movement, food, recovery and symptoms made more sense when I looked at them together rather than as separate problems.
 
-## Who I’m building it for
+I want to make that learning curve shorter for the next woman.
 
-This project is for modern Indian women juggling demanding jobs, late nights, stress, inconsistent schedules and limited healthy food options—often while receiving a lot of conflicting advice about what they *should* be doing.
+## What it is
 
-The goal is not to tell someone there is one correct way to eat, exercise or live. It is to help her notice her own patterns, understand her body a little better and arrive at conversations with a doctor with more context.
+It is a calm, private health journal that brings everyday signals into one place and turns them into careful observations.
 
-## Starting small
+The promise is deliberately small: help me notice my own patterns, understand what those observations are based on and decide what deserves attention.
 
-The first version is intentionally focused:
+It does not diagnose PCOD, prescribe treatment or pretend that a correlation is a cause. It is designed to support reflection and make a future conversation with a doctor more useful.
 
-- Record periods and see cycle history.
-- Notice changes and recurring patterns over time.
-- Add simple personal notes without turning tracking into another demanding routine.
-- Make the information calm, understandable and private.
+## What the MVP does today
 
-It will not diagnose PCOD, recommend medication or replace professional care. Health conditions are personal, and what helped me may not be right for someone else.
+- Creates a private personal vault protected by a PIN.
+- Records periods, flow and cycle history.
+- Keeps a short daily check-in for sleep, stress, energy, movement and symptoms.
+- Shows an approximate next-period range and explains what it used.
+- Waits for enough information before showing a pattern observation.
+- Lets the user review the evidence and limitations behind an observation.
+- Allows complete data export and deletion.
+
+The current version stores the encrypted vault in the user’s browser rather than in a health database on a server. That keeps the first release private and understandable, but it also means there is no account recovery or multi-device sync yet.
+
+## The principles behind it
+
+- Start with the woman’s own baseline.
+- Ask for less and only collect what may become useful.
+- Show how an estimate or observation was reached.
+- Keep uncertainty visible instead of inventing an exact answer.
+- Use kind, ordinary language without shame or alarmism.
+- Design for real routines, including missed days and imperfect information.
 
 ## Where it is now
 
-This is still an early project. I’m working through what is genuinely useful, what would feel intrusive and how to support awareness without creating anxiety or pretending that software has all the answers.
+Version 0.1 is live and mobile-responsive. I can set up a vault, record periods, complete daily check-ins and see early observations when enough information exists.
 
-More than anything, I want to build the kind of tool I needed earlier: honest, simple and grounded in the reality that understanding your body takes time.
+The next stage is not about adding more intelligence. It is about making the basic habit genuinely useful: reviewing older check-ins, seeing periods and daily signals together, creating a readable personal health summary and learning what feels valuable after several weeks of real use.
+
+This is still an early personal product, not a clinically validated health tool. That boundary is part of the product—not fine print added later.
